@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Responsive Images</title>
+    <link rel="stylesheet" type="text/css" href="../css/experiment2.css" />
+</head>
+<body>
+    <h1>Responsive Images</h1>
+    <hr />
+    <br />
+
+    <div class="desc">
+        <h3>Change your browser width to see how the image adjusts itself to different browser window sizes.</h3>
+    </div>
+
+    <div>
+        <section class="pictureDemo">
+            <figure>
+                <img src="http://respimg.cdnconnect.com/on-a-grid/yacht_race@fallback.jpg"
+                     srcset="http://respimg.cdnconnect.com/on-a-grid/yacht_race@mobile.jpg 320w,
+                 http://respimg.cdnconnect.com/on-a-grid/yacht_race@wide-mobile.jpg 480w,
+                 http://respimg.cdnconnect.com/on-a-grid/yacht_race@tablet.jpg 768w,
+                 http://respimg.cdnconnect.com/on-a-grid/yacht_race@desktop.jpg 1024w,
+                 http://respimg.cdnconnect.com/on-a-grid/yacht_race@hires.jpg 1280w"
+                     sizes="65vw"
+                     alt="A yacht race" />
+                <p>An exciting yacht race</p>
+                <figcaption>
+                    <p>This loads images as and when each breakpoint matches.</p>
+                </figcaption>
+            </figure>
+        </section>
+    </div>
+
+    <div class="description">
+        <h3>About the experiment</h3>
+        <hr />
+
+        <p>
+            This experiment the awesome combination of srcset and sizes attributes of img element to enable to 
+            enable an image to render itself according to the different browser sizes, targetting the screens of 
+            all the devices at different widths. 
+        </p>
+        <p>
+            The srcset specifies various breakpoints (which are actually different browser widths) along with the source image, 
+            and the browser automatically picks up that image when its width is less than the specified breakpoint. 
+            The sizes attribute specifies the default length/size of the image that will be picked up when none of 
+            the specified breakpoints match.
+        </p>
+
+        <h3>Code Snippet</h3>
+        <hr />
+        <p>
+            The srcset attribute is used as:
+        <pre>
+            &lt;img src="http://respimg.cdnconnect.com/on-a-grid/yacht_race@fallback.jpg"
+                     srcset="http://respimg.cdnconnect.com/on-a-grid/yacht_race@mobile.jpg 320w,
+                             http://respimg.cdnconnect.com/on-a-grid/yacht_race@wide-mobile.jpg 480w,
+                             http://respimg.cdnconnect.com/on-a-grid/yacht_race@tablet.jpg 768w,
+                             http://respimg.cdnconnect.com/on-a-grid/yacht_race@desktop.jpg 1024w,
+                             http://respimg.cdnconnect.com/on-a-grid/yacht_race@hires.jpg 1280w"
+                     sizes="65vw"
+                     alt="A yacht race" />
+        </pre>
+        </p>
+
+        <h3>Source Code</h3>
+        <hr />
+        <ul>
+            <li><a href="../../../fileview/Default.aspx?~/experiments/week2/html/experiment2.html">View HTML Source</a></li>
+            <li><a href="../../../fileview/Default.aspx?~/experiments/week2/css/experiment2.css">View CSS Source</a></li>
+        </ul>
+
+        <h3>References</h3>
+        <hr />
+        <a href="http://ericportis.com/posts/2014/srcset-sizes/">ericportis.com</a>
+    </div>
+
+</body>
+</html>

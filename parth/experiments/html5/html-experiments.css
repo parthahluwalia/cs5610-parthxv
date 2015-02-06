@@ -1,0 +1,24 @@
+﻿body {
+    margin-left: 1em;
+}
+
+.subheading {
+    font-size: 1.3em;
+}
+
+.description {
+    font-size: 1.2em;
+}
+
+.example-description {
+    font-size: 1.1em;
+    margin-left: 3em;
+    margin-right: 20em;
+}
+
+#menu-div {
+    background-color: #5D385D;
+    color: #ffffff;
+    padding: 10px;
+    width: 20em;
+}

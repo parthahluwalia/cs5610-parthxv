@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap Super Bowl</title>
+    <link rel="stylesheet" type="text/css" href="../css/experiment4.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.nfl.com/gamecenter/2015020100/2014/POST22/patriots@seahawks#menu=gameinfo&tab=preview">Super Bowl</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>Super Bowl XLIX</h1>
+            <p>
+                The game is scheduled to be played on February 1, 2015, at University of Phoenix Stadium in Glendale, Arizona 
+                between <b><i>New England Patriots</i></b> and <b><i>Seattle Seahawks</i></b>. Kickoff is scheduled for 4:30pm MST (6:30pm EST/23:30 UTC). 
+                his will be the second Super Bowl played in that stadium (XLII), and the third one held in the Phoenix metropolitan area (XXX at Sun Devil Stadium in Tempe). The game will be broadcast in the United States by NBC. 
+            </p>
+        </div>
+
+        <div class="nfl-info">
+            <a href="http://www.nfl.com/gamecenter/2015020100/2014/POST22/patriots@seahawks#menu=gameinfo&tab=preview" class="btn btn-default btn-block text-uppercase game-center">
+                Enter NFL 2015 Game Center
+            </a>
+            <br /><br />
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team Name</th>
+                            <th>Home Location</th>
+                            <th>Passing Leader</th>
+                            <th>Current Championship</th>
+                            <th>More Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="success">
+                            <td>1.</td>
+                            <td>New England Patriots</td>
+                            <td>Greater Boston Area</td>
+                            <td><a class="btn btn-link" href="http://www.nfl.com/player/tombrady/2504211/profile">Tom Brady</a></td>
+                            <td>AFC Champions</td>
+                            <td><a class="btn btn-primary btn-block" href="http://www.nfl.com/teams/profile?team=NE">View Pats</a></td>
+                        </tr>
+                        <tr class="warning">
+                            <td>2.</td>
+                            <td>Seattle Seahawks</td>
+                            <td>Seattle</td>
+                            <td><a class="btn btn-link" href="http://www.nfl.com/player/russellwilson/2532975/profile">Russell Wilson</a></td>
+                            <td>AFC Champions</td>
+                            <td><a class="btn btn-primary btn-block" href="http://www.nfl.com/teams/profile?team=SEA">View Seahawks</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h2>About the Experiment</h2>
+        <hr />
+        <p>
+            This experiment demonstrates how to use Bootstrap to build web pages. I have utilized the key peices of 
+            Bootstrap infrastructure to style the page. These peices include styling using key classes like <b><i>jumbotron, table, table-responsive, navbar, success, warning, btn, etc.</i></b>
+        </p>
+
+        <p>
+            You can enter the NFL Game Center to watch the matchup statastics for the teams playing in Super Bowl. You can also 
+            click on a corresponding team button (styled using <i>btn, btn-primary, btn-block</i>) that would land you to their nfl page. Similarly in order to view the respective passing leader's profile, one can click on his name link (styled using <i>btn, btn-link</i>). 
+            The table is made responsive using the table-responsive class in Bootstrap. This is done by wrapping .table class in .table-responsive class 
+            to make them scroll horizontally on small devices (under 768px).
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/html/experiment4.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/css/experiment4.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://getbootstrap.com/css/">Bootstrap CSS</a>
+    </div>
+
+</body>
+</html>

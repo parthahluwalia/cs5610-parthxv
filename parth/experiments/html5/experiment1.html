@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML5 Experiment 1</title>
+    <link rel="stylesheet" type="text/css" href="html-experiments.css" />
+</head>
+<body>
+    <header>
+        <h1> HTML5 NEW ELEMENTS </h1>
+        <hr />
+    </header>
+
+    <article>
+        <header>
+            <h2> Some handy new Semantic/Structural elements </h2>
+        </header>
+
+        <h3 class="subheading">1. &lt;aside&gt; tag</h3>
+        <p class="description">
+            The HTML &lt;aside&gt; element represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content.
+        </p>
+        <section class="example-description">
+            <p>
+                <em><b>Entourage</b></em> is an American comedy-drama television series that premiered on HBO on July 18, 2004 and concluded on September 11, 2011, after eight seasons. The series was created and largely written by Doug Ellin and chronicles the acting career of Vincent Chase, a young A-list movie star, and his childhood friends from Queens, New York City, as they navigate the unfamiliar terrain of Los Angeles, California.
+            </p>
+            <aside>
+                Entourage typically has at least one celebrity guest per episode, such as actors, film directors, film producers, musicians and professional athletes playing themselves.
+            </aside>
+            <p>
+                Mark Wahlberg and Stephen Levinson served as the show's executive producers, and its premise is loosely based on Wahlberg's experiences as an up-and-coming film star.
+            </p>
+        </section>
+
+
+        <h3 class="subheading">2. &lt;details&gt; tag</h3>
+        <p class="description">
+            This element is used as a disclosure widget that defines addtional details that a user can view or hide.
+        </p>
+        <section class="example-description">
+            <details>
+                <summary>
+                    Click this widget for details
+                </summary> 
+                <p>
+                    Entourage - The Movie is scheduled to release on June 5, 2015.
+                </p>
+            </details>
+        </section>
+
+        <h3 class="subheading">3. &lt;dialog&gt; tag</h3>
+        <p class="description">
+            Represents a dialog box or an interactive window. The <em>open</em> attribute indicates a dialog is active and available for interaction. When the open attribute is not set, it shouldn't be shown to the user.
+        </p>
+        <section class="example-description">
+            <dialog>
+                <p> Greatings from Ari Gold!</p>
+            </dialog>
+        </section>
+
+        <h3 class="subheading">4. &lt;figcaption&gt; and &lt;figure&gt; tags</h3>
+        <p class="description">
+            &lt;figure&gt; represents self-contained content like photos, illustrations, code-listings, diagrams, etc. 
+            <br />
+            &lt;figcaption&gt; element defines a caption for a &lt;figure&gt; element.
+        </p>
+        <section class="example-description">
+            <figure>
+                <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                <figcaption>Mozilla Developer Network Logo</figcaption>
+            </figure>
+        </section>
+
+        <h3 class="subheading">5. &lt;mark&gt; tag</h3>
+        <p class="description">
+            Represents a marked or highlighted text i.e. a run of text for reference purpose.
+        </p>
+        <section class="example-description">
+            <p>
+                I am highlighting <mark>this part of text</mark>.
+            </p>
+        </section>
+
+        <h3 class="subheading">6. &lt;menuitem&gt; tag</h3>
+        <p class="description">
+            This element represents a command that a user is able to invoke through a popup menu.
+        </p>
+        <section class="example-description">
+            <div id="menu-div" contextmenu="new-context-menu">
+                <p>Right Click inside this box!</p>
+            </div>
+            <menu id="new-context-menu" type="context">
+                <menu label="Image Rotation">
+                    <menuitem>Rotate 90</menuitem>
+                    <menuitem>Rotate 180</menuitem>
+                    <menuitem>Flip Vertically</menuitem>
+                    <menuitem>Flip Horizontally</menuitem>
+                </menu>
+            </menu>
+            <aside>Note: This example is only compatible with Firefox!</aside>
+        </section>
+
+        <h3 class="subheading">7. &lt;meter&gt; tag</h3>
+        <p class="description">
+            This element represents a scalar value within a known range.
+        </p>
+        <section class="example-description">
+            <p>His acting performance on Medellin: &nbsp; <meter value="3" min="0" max="10">B</meter> </p>
+        </section>
+
+        <h3 class="subheading">8. &lt;progress&gt; tag</h3>
+        <p class="description">
+            This element specifies the progress of a task
+        </p>
+        <section class="example-description">
+            <progress value="75" max="100"> 70% </progress>
+        </section>
+
+        <h3 class="subheading">9. &lt;ruby&gt; and &lt;rt&gt; tags</h3>
+        <p class="description">
+            &lt;ruby&gt; specifies ruby annotations for East Asian typography.
+            <br />
+            &lt;ruby&gt; specifies what to show in browsers that do not support Ruby annotations.
+        </p>
+        <section class="example-description">
+            <ruby>
+                漢 <rp>(</rp><rt>Kan</rt><rp>)</rp>
+                字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+            </ruby>
+        </section>
+
+        <h3 class="subheading">10. &lt;summary&gt; tag</h3>
+        <p class="description">
+            This element is used as a summary and defines a visible heading for &lt;details&gt; element.
+        </p>
+        <section>
+            <details>
+                <summary>Copyright Notice</summary>
+                <p>Copyright (c) 2015 Mark Wahlburg</p>
+                <p>All rights of Wahlburgers are reserved to Mark Walhburg. </p>
+            </details>
+            <aside>This element is supported only in Chrome.</aside>
+        </section>
+
+        <h3 class="subheading">11. &lt;wbr&gt; tag</h3>
+        <p class="description">
+            The  Word Break Opportunity element defines a position within text where the browser may optionally break a line, but its line-breaking rules won't create a line break at that location.
+        </p>
+        <section>
+            <p>http://this<wbr>.is<wbr>.a<wbr>.really<wbr>.long<wbr>.page<wbr>.com/With<wbr>/deeper<wbr>/and<wbr />/more<wbr />/deeper<wbr />/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages</p>
+        </section>
+
+        <hr />
+
+        <header>
+            <h2>Source Code</h2>
+        </header>
+
+        <ul class="description">
+            <li><a href="../../fileview/Default.aspx?~/experiments/html5/experiment1.html">View HTML Source</a></li>
+            <li><a href="../../fileview/Default.aspx?~/experiments/html5/html-experiments.css">View CSS Source</a></li>
+        </ul>
+        
+        <hr />
+
+        <header>
+            <h2>References</h2>
+        </header>
+        <ul class="description">
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Mozilla Developer Network</a></li>
+            <li><a href="http://www.w3schools.com/htmL/default.asp">w3Schools.com</a></li>
+        </ul>
+
+        <hr />
+        <br />
+
+    </article>
+
+</body>
+</html>

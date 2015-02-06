@@ -1,0 +1,3 @@
+﻿../story/whatisnext.htm?../experiments/story.txt What is next?
+../story/index.htm?../experiments/html5/htmlStory.txt 1. HTML and CSS Experiments
+../story/index.htm?../experiments/week2/week2Story.txt 2. Responsive Design and Bootstrap

@@ -1,0 +1,238 @@
+﻿* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/Grey_background.png");
+}
+
+ ul.master_navigation
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        list-style: none;
+        margin: 0.5em 0;
+        padding: 0;
+    }
+
+ ul.master_navigation li
+    {
+        display: inline-block;
+        padding: 0 0.5%;
+    }
+
+ a
+    {
+        color: #FFFFFF;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+ a:visited
+    {
+        color: #99CCFF;
+    }
+
+ a:hover {
+     color: #C2C2C6;
+ }
+
+@media screen and (min-width:1195px) {
+    .pic {
+         border: 3px solid #fff;  
+         float: left;
+         height: 300px;
+         width: 300px;
+         overflow: hidden;
+  
+   
+         -webkit-box-shadow: 5px 5px 5px #111;
+                 box-shadow: 5px 5px 5px #111;  
+    }
+
+     #morph-pic {
+         float: left;
+         margin-left: 90px;
+         width: 30%;
+         align-content:center;
+     }
+
+     #intro {
+         margin: auto;
+         width: 70%;
+         height: 300px;
+         /* text-align: center; */
+     }
+
+     h2.name {
+        color:#FFFFFF;
+        font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 30px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 5;
+     }
+
+     p.about-me {
+        color: #FFFFFF;
+        font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 20px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 500;
+     }
+
+     .footer ul {
+         height: 200px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 1.5em;
+         font-weight: bold;
+         list-style: none;
+         margin: 0.5em 0;
+         padding: 0;
+         text-align: center;
+    }
+
+    .footer ul li {
+        display: inline-block;
+        padding: 0 0 0 3em;
+    }
+
+    .footer .bottom {
+        position: relative;
+        top: 150px;
+    }
+
+}
+
+@media screen and (min-width:600px) and (max-width:1195px) {
+    .pic {
+         border: 3px solid #fff;  
+         float: left;
+         height: 250px;
+         width: 250px;
+         overflow: hidden;
+  
+         -webkit-box-shadow: 4px 4px 4px #111;
+                 box-shadow: 4px 4px 4px #111;  
+    }
+
+     #morph-pic {
+         float: left;
+         margin-left: 60px;
+         width: 300px;
+         align-content:center;
+     }
+
+     #intro {
+         margin: auto;
+         width: 500px;
+         height: 450px;
+     }
+
+     h2.name {
+        color:#FFFFFF;
+        font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 26px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 8;
+     }
+
+     p.about-me {
+        color: #FFFFFF;
+        font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 18px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 500;
+     }
+
+     .footer ul {
+         height: 200px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 1.5em;
+         font-weight: bold;
+         list-style: none;
+         margin: 0.5em 0;
+         padding: 0;
+         text-align: center;
+    }
+
+    .footer ul li {
+        display: inline-block;
+        padding: 0 0 0 3em;
+    }
+
+    .footer .bottom {
+        position: relative;
+        top: 20px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .pic {
+        border: 3px solid #fff;  
+        float: none;
+        height: 220px;
+        width: 220px;
+        overflow: hidden;
+     
+        -webkit-box-shadow: 4px 4px 4px #111;
+                box-shadow: 4px 4px 4px #111;  
+    }
+
+    #morph-pic {
+        float: left;
+        margin-left: 60px;
+        width: 40%;
+        align-content:center;
+     }
+
+    #intro {
+         margin: auto;
+         width: 70%;
+         height: 420px;
+         overflow:hidden;
+     }
+
+    h2.name {
+        color:#FFFFFF;
+        font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 22px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 10;
+     }
+
+     p.about-me {
+        color: #FFFFFF;
+        font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 15px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 500;
+     }
+
+     .footer ul {
+         height: 100px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 1.1em;
+         font-weight: bold;
+         list-style: none;
+         margin: 0.5em 0;
+         padding: 0;
+         text-align: center;
+    }
+
+    .footer ul li {
+        display: inline-block;
+        padding: 0 0 0 1em;
+    }
+}

@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootswatch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/experiment5.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+    <script src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/assets/js/bootswatch.js"></script>
+
+    <script type="text/javascript" src="experiment5.js"></script>
+</head>
+<body>
+
+    <!-- Custom Navbar
+    ================================================== -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="bs-component">
+                    <div class="navbar navbar-inverse">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="http://www.nfl.com/superbowl/49">Super Bowl</a>
+                        </div>
+                        <div class="navbar-collapse collapse navbar-inverse-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Active</a></li>
+                                <li><a href="http://www.nfl.com/gamecenter/2015020100/2014/POST22/patriots@seahawks#menu=gameinfo&tab=preview">Game Center</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teams <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-header">PATRIOTS</li>
+                                        <li><a href="http://www.nfl.com/teams/profile?team=NE">Profile</a></li>
+                                        <li><a href="http://www.nfl.com/teams/statistics?team=NE">Stats</a></li>
+                                        <li><a href="http://www.nfl.com/teams/schedule?team=NE">Schedule</a></li>
+                                        <li class="divider"></li>
+                                        
+                                        <li class="dropdown-header">SEAHAWKS</li>
+                                        <li><a href="http://www.nfl.com/teams/profile?team=SEA">Profile</a></li>
+                                        <li><a href="http://www.nfl.com/teams/statistics?team=SEA">Stats</a></li>
+                                        <li><a href="http://www.nfl.com/teams/schedule?team=SEA">Schedule</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="navbar-form navbar-left">
+                                <input type="text" name="searchTerm" class="form-control col-lg-8" placeholder="Search">
+                            </form>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="http://www.nfl.com/news/story/0ap3000000465257/article/super-bowl-xlix-analyst-picks-seahawks-or-patriots-in-arizona">Predictions</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Patriots <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="http://www.nfl.com/teams/profile?team=NE">Profile</a></li>
+                                        <li><a href="http://www.nfl.com/teams/statistics?team=NE">Stats</a></li>
+                                        <li><a href="http://www.nfl.com/teams/schedule?team=NE">Schedule</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>NFL XLIX with Bootswatch</h1>
+        </div>
+
+        <div class="bs-docs-section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h2 id="forms">Post your comments about the game</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="well bs-component">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Legend</legend>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="col-lg-2 control-label">Name</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" name="inputName" class="form-control" id="inputName" placeholder="Name">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input id="anonymous-check" type="checkbox"> Post as Anonymous
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                        <span class="help-block">We are also having a poll as which team is favored, so you can select the team you want to see win tomorrow's NFL championship.</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Teams</label>
+                                    <div class="col-lg-10">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="teamFavored" id="optionsRadios1" value="Pats" checked="">
+                                                New England Patriots
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="teamFavored" id="optionsRadios2" value="Hawks">
+                                                Seattle Seahawks
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="select" class="col-lg-2 control-label">Selects</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" id="select">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <br>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <button class="btn btn-default">Cancel</button>
+                                        <button id="post" type="button" class="btn btn-primary">Post Comment</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-lg-offset-1">
+                    <h3>Posted Comments</h3>
+                    <hr />
+                    <h4 id="allComments"></h4>
+                </div>
+            </div>
+
+          </div>
+
+            <section>
+                <div class="container">
+
+                    <h2>About the Experiment</h2>
+                    <hr />
+                    <p>
+                        This experiment demonstrates how one can beutify their pages by using Bootswatch. The page is designed 
+                        in order to view various details about the upcoming NFL Super Bowl. The NavBar here is 
+                        customized in a way to provide convinent links to NFL like their Game Center, Predictions, or by clicking 
+                        the drop down to navigate to the champions' pages like their respective profile, stats and schedule. 
+                        A search bar is also encapsulated in the NavBar that can be customized to provide search functionality to a user.  
+                    </p>
+                    <p>
+                        A visitor to this web page can also post a comment about his favorite team amongst the two. In order to 
+                        store and retrieve the comments, the concept of local storage provided by HTML5 has been used. A user may 
+                        wish to provide his name while posting a comment and select his favourite team. As and when a new comment is posted, 
+                        that comment is retrieved from the local storage and displayed along with the previously posted comments. 
+                    </p>
+
+                    <h2>Code Snippet</h2>
+                    <hr />
+                    <pre>
+            &lt;div class="container">
+                &lt;div class="row">
+                    &lt;div class="col-lg-12">
+                        &lt;div class="bs-component">
+                            &lt;div class="navbar navbar-inverse">
+                                &lt;div class="navbar-header"> 
+                    
+                function display() {
+                    var commentBox = document.getElementById("allComments");
+                    var comments = "";
+                    for (var i = 0; i < sessionStorage.length; i++) {
+                        var propertyName = sessionStorage.key(i);
+                        var fetchedComment = sessionStorage.getItem(propertyName);
+                        comments = comments + fetchedComment + "&lt;br /> &lt;br />";
+                    }
+                    commentBox.innerHTML = comments;
+                }
+                    </pre>
+
+                    <h2>Source Code</h2>
+                    <hr />
+                    <ul>
+                        <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/html/experiment5.html">View HTML Source</a></li>
+                        <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/html/experiment5.js">View JavaScript Source</a></li>
+                        <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/css/experiment5.css">View CSS Source</a></li>
+                    </ul>
+
+                    <h2>References</h2>
+                    <hr />
+                    <a href="http://bootswatch.com/help/">Bootswatch</a>
+                    <br /><br /><br />
+                </div>
+            </section>
+        </div>
+</body>
+</html>

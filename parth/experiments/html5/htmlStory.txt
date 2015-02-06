@@ -1,0 +1,5 @@
+﻿../../story/whatisnext.htm?../experiments/html5/htmlStory.txt What is next?
+experiment1.html HTML5 New Elements
+experiment2.html HTML5 Canvas Element
+css/html/cssExp1.html Inline and Internal Style Sheet
+css/html/cssExp2.html External Style Sheet with WebKit and Mozilla extensions

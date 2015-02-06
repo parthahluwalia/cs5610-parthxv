@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Media Queries</title>
+    <link rel="stylesheet" type="text/css" href="../css/experiment3.css" />
+</head>
+<body>
+    <h1>Responsive Design with Media Queries and Navigation Switch</h1>
+    <hr />
+    <br />
+
+    <div id="wrapper">
+
+        <header>
+            <p>Resize your browser to minimum width to check out the navigation switch!</p>
+
+            <nav id="skipTo">
+                <ul>
+                    <li><a href="#main">Skip to Main Content</a></li>
+                </ul>
+            </nav>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+
+            <div id="banner">
+                <img src="../../../images/kaws.jpg" alt="banner" />
+            </div>
+        </header>
+
+        <section id="main">
+            <h2>Main Section</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </section>
+
+        <aside>
+            <h2>Sub-section</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </aside>
+
+    </div>
+
+    <div class="description">
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment demonstrates how to build a basic responsive web page using media queries and 
+            and providing the feature to switch navigation for the devices with less screen width. 
+        </p>
+        <p>
+            Media queries help us combine a series of grabs, thus enabling the impact of transitions between 
+            different screen sizes to be appreciated fully. And since scaling down to a small screen 
+            could become unreadable and hard to click, we may want to also switch the navigation to 
+            enable a user to access it more easily.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            The following is the media query I wrote for this page:
+        <pre>
+        @media screen and (max-width: 566px) {
+            #skipTo {
+            display: block;
+            }
+            header nav, #main, aside {
+            float: left;
+            clear: left;
+            margin: 0 0 10px;
+            width: 100%;
+            }
+            header nav li {
+            margin: 0;
+            background: #efefef;
+            display: block;
+            margin-bottom: 3px;
+            }
+            header nav a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            }
+        }
+        </pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/html/experiment3.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week2/css/experiment3.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a class="link" href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/">Smashing Magazine Responsive Design</a>
+</div>
+
+</body>
+</html>

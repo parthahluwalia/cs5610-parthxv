@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Internal Style Sheet</title>
+    <style>
+
+        #westDiv {
+            float: left;
+            background-color: #2bac75;
+            width: 15%;
+            height: 400px;
+            text-align: center;
+        }
+
+        #west {
+            line-height :15em;
+            transform: rotate(90deg);
+            transform-origin: left top 30;
+        }
+
+        #mainDiv {
+            float:left;
+            background-color: #e18626;
+            width: 70%;
+            height: 400px;
+            text-align: center;
+        }
+
+        #center {
+            line-height: 150px;
+            font-size: 3em;
+        }
+
+        #eastDiv {
+            float: left;
+            background-color: #4262d0;
+            width: 15%;
+            height: 400px;
+            text-align: center;
+        }
+
+        #east {
+            line-height: 15em;
+        }
+
+        #southDiv {
+            float: left;
+            background-color: #b72727;
+            width: 100%;
+            height: 70px;
+            text-align: center;
+        }
+
+        #south {
+            line-height: 35px;
+            font-style: oblique;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body style="background-color: #F0F0F5">
+
+    <header>
+        <h1>Inline Style and Internal Style Sheet</h1>
+        <hr />
+        <br />
+    </header>
+
+    <div style="background-color: #00ffff; width:100%; height: 100px; text-align:center; line-height:90px">
+        <header>
+            <h2 style="font-style: oblique">Header Content</h2>
+        </header>
+    </div>
+
+    <div id="westDiv">
+        <nav><h2 id="west">Navigation</h2></nav>
+    </div>
+
+    <div id="mainDiv">
+        <main>
+            <h2 id="center">Main <br /> Content</h2>
+        </main>
+    </div>
+
+    <div id="eastDiv">
+        <h2 id="east">Aside East Content</h2>
+    </div>
+        
+    <div id="southDiv">
+        <h2 id="south">Footer</h2>
+    </div>
+
+    <br />
+
+    <article>
+        <header>
+            <hr />
+            <h2>About the experiment and Code Snippets</h2>
+            <hr />
+        </header>
+        <section>
+            <p>
+                This experiment shows how one can implement an inline style or an internal style sheet in CSS.
+            </p>
+        </section>
+
+        <section>
+            <p>
+                The inline style CSS can be implemented by using style attribute corresponding to a tag where 
+                the style has to be applied. This is shown in the snippet below:
+                <pre>
+                    &lt;div style="background-color: #00ffff; width:100%; height: 100px; text-align:center; line-height:90px"&gt;
+                        &lt;header&gt;
+                            &lt;h2 style="font-style: oblique"&gt;Header Content&lt;/h2&gt;
+                        &lt;/header&gt;
+                    &lt;/div&gt;
+                </pre>
+            </p>
+        </section>
+        
+        <section>
+            <p>
+                The internal style sheet, on the other hand can be implented by using &lt;style&gt;tag. The id and class attributes 
+                can then be accessed using their corressponding CSS notations. The snippet can be seen below:
+                <pre>
+                    &lt;style&gt;
+                        #westDiv {
+                            float: left;
+                            background-color: #2bac75;
+                            width: 15%;
+                            height: 400px;
+                            text-align: center;
+                        }
+
+                        #west {
+                            line-height: 15em;
+                            transform: rotate(90deg);
+                            transform-origin: left top 30;
+                        }
+                    &lt;/style&gt;
+                </pre > 
+            </p > 
+        </section > 
+    </article > 
+
+    <h2> Source Code </h2>
+    <hr />
+    <a href="../../../../fileview/Default.aspx?~/experiments/html5/css/html/cssExp1.html">View Source</a>
+    <br />
+
+    <h2>References</h2>
+    <hr />
+
+    <ul>
+        <li><a href="http://caniuse.com/">CanIUse</a></li>
+        <li><a href="http://www.w3schools.com/css/default.asp">W3Schools</a></li>
+    </ul>
+
+</body > 
+</html >

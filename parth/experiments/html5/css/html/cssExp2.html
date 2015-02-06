@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>External Style Sheet</title>
+    <link rel="stylesheet" type="text/css" href="../css/experiment2.css" />
+    <script type="text/javascript">
+        
+        function showDescription() {
+            document.getElementById("the-description").innerHTML =
+                "<h3>Description</h3><hr />" +
+                "This experiment demonstrates the use of external style sheet. This can be done by using link tag in the head section of the respective HTML page, and providing the reference to the corresponding CSS file. <br /><br />"
+            + "In order to display boxed shadows and rounded buttons, we can use the webkit and mozilla extensions provided for CSS. Refer to the code snippets and source below.";
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>External Style Sheet</h1>
+        <hr />
+        <br />
+    </header>
+
+    <div id="button-box">
+       <a href="#" class="button" onclick="showDescription();">View Description</a>
+    </div>
+
+    <div id="description-div">
+        <p id="the-description">
+
+        </p>
+    </div>
+ 
+    <div id="doc">
+        <article>
+            <header>
+                <h3>Code Snippet</h3>
+                <hr />
+            </header>
+            <section>
+                <p>
+                The external style sheet can be linked to an HTML document by using link tag as:
+        <pre>
+        &lt;link rel="stylesheet" type="text/css" href="../css/experiment2.css" /&gt;
+        </pre>
+                </p>
+
+                <p>
+                    The styling can then be applied just as in an internal style sheet using various norms of CSS.
+         <pre>
+         #button-box { 
+            height: 100px; 
+            width: 100%; 
+            position: relative; 
+            float: left; 
+            background: #353131;
+        }
+        .button {
+            position: relative;
+            top: 36%;
+            left: 40%;
+        }
+        </pre>
+                </p>
+            </section>
+
+            <section>
+                <h3> Source Code </h3>
+                <hr />
+                <ul>
+                    <li>
+                        <a href="../../../../fileview/Default.aspx?~/experiments/html5/css/html/cssExp2.html">View HTML Source</a>
+                    </li>
+                    <li><a href="../../../../fileview/Default.aspx?~/experiments/html5/css/css/experiment2.css">View CSS Source</a></li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h3>References</h3>
+                <hr />
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Webkit_Extensions">Mozilla WebKit Extenstions</a>
+                <hr />
+                <br />
+            </section>
+        </article>
+    </div>
+
+</body>
+</html>

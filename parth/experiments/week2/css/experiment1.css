@@ -1,0 +1,29 @@
+﻿.lipsum {
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.firstDiv {
+    color: blue;
+}
+
+.secondDiv {
+    color: #c60101;
+}
+
+.thirdDiv {
+    color: #16a456;
+}
+
+.fourthDiv {
+    color: #c7c038;
+}
+
+.description {
+    padding-top: 10px;
+    clear: both;
+}

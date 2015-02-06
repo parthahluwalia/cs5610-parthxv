@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week2/week2Story.txt What is next?
+html/experiment1.html Simple Responsive Design
+html/experiment2.html Responsive Images Using srcset and sizes
+html/experiment3.html Responsive Design with Media Queries and Navigation Switch
+html/experiment4.html Super Bowl Details with Bootstrap
+html/experiment5.html NFL XLIX Discussion with Bootswatch
