@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week3/week3Story.txt What is next?
+html/experiment1.html RPN Calculator in JavaScript
+html/experiment2.html Hello World from jQuery
+html/experiment3.html Grid Animation with jQuery - Build Image Grid
+html/experiment4.html Grid Animation with jQuery - Fading out the Images
+html/experiment5.html Grid Animation with jQuery - Storming back the Images

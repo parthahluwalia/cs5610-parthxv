@@ -61,7 +61,7 @@
         <ul>
             <li><a href="story/index.htm?../experiments/story.txt" class="bottom">EXPERIMENTS</a></li>
             <li><a href="#" class="bottom"> PROJECT </a></li>
-            <li><a href="#" class="bottom">DOCUMENTATION</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/tree/master/parth" class="bottom">GITHUB</a></li>
         </ul>
     </div>
     

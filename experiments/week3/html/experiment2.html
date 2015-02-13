@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Hello jQuery</title>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../js/experiment2.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Show a message from JQuery</h1>
+        <hr />
+        <br />
+        <h2>Message on page load from jQuery: </h2>
+        <h3 id="msg"></h3>
+        <div class="documentation">
+            <hr />
+            <h3>About this experiment</h3>
+            <p>
+                The experiment is performed to implement jQuery in HTML page. The jQuery can be downloaded from <a href="http://jquery.com/" target="_blank">here.</a>
+            </p>
+
+            <hr />
+            <h3>Code Snippet</h3>
+            <h4>Including jQuery in HTML</h4>
+            <pre> &lt;script src="../../js/jquery-1.11.1.js">&lt;/script></pre>
+            <hr />
+            <h4>jQuery Script</h4>
+            <pre>
+            jQuery(init);
+            function init() {
+                console.log("Called init function - JQuery");
+                jQuery("#msg").append("Hello World from JQuery");
+            }
+            </pre>
+            <hr />
+            <h4>Source Code </h4>
+            <a href="../../../fileview/Default.aspx?~/experiments/week3/html/experiment2.html" target="_blank">HTML</a>
+            <a href="../../../fileview/Default.aspx?~/experiments/week3/js/experiment2.js" target="_blank">jQuery Code</a>
+            <hr />
+            <h4>References</h4>
+            <a href="http://www.w3schools.com/js/default.asp" target="_blank">W3 Schools</a>
+            <br />
+            <a href="http://jquery.com/" target="_blank">jQuery</a>
+        </div>
+
+    </div>
+</body>
+</html>

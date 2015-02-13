@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Animate jQuery</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/experiment3.css" />
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://thecodeplayer.com/u/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../js/experiment4.js" ></script>
+
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <h1>Grid Animation with jQuery - Fading out the Images</h1>
+    </div>
+
+    <div class="container">
+        <div class="grid"></div>
+
+        <button class="btn btn-lg animate">Animate</button>
+
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This is a 3 experiment series walkthrough (combined in Experiments 3, 4 and 5) showcasing the usage of $.delay() function,jQuery easing plugin 
+            and CSS transforms to animate some of the thumbnails in the grid.
+        </p>
+        <p>
+            The final outcome of the experiment is intended to be this: <br />
+            Upon clicking the Animate button, the thumbnails disappear randomly with a ripple effect. After all the thumbnails have faden away, 
+            they will quickly storm back into their original places in a cool 3D way.
+        </p>
+        <p>
+            Now, in the second experiment of this 3-experiment walkthrough, the ripple effect is created to display 
+            the fading out of thumbnails with style using Math.random() function followed by application of the delay() function. While 
+            the thumbnails are fading out a step function is used to apply some transfroms.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            The following code is being used to generate the ripple effect:
+            <pre>
+        $(".animate").on("click", function(){
+        //fading out the thumbnails with style
+            $("img").each(function(){
+                d = Math.random()*1000; //1ms to 1000ms delay
+                $(this).delay(d).animate({opacity: 0}, {
+                    //while the thumbnails are fading out, we will use the step function to 
+                    //apply some transforms. variable n will give the current opacity in the animation.
+                    step: function(n){
+                        s = 1-n; //scale - will animate from 0 to 1
+                        $(this).css("transform", "scale("+s+")");
+                    }, 
+                    duration: 1000, 
+                })
+            })
+        })</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/html/experiment4.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/js/experiment4.js">View JavaScript Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/css/experiment3.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://thecodeplayer.com/">Code Player</a>
+        <hr />
+    </div>
+
+</body>
+</html>

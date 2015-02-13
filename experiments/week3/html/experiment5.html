@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Animate jQuery</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/experiment3.css" />
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://thecodeplayer.com/u/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../js/experiment5.js" ></script>
+
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <h1>Grid Animation with jQuery - Storming back the Images</h1>
+    </div>
+
+    <div class="container">
+        <div class="grid"></div>
+
+        <button class="btn btn-lg animate">Animate</button>
+
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This is a 3 experiment series walkthrough (combined in Experiments 3, 4 and 5) showcasing the usage of $.delay() function,jQuery easing plugin 
+            and CSS transforms to animate some of the thumbnails in the grid.
+        </p>
+        <p>
+            The final outcome of the experiment is intended to be this: <br />
+            Upon clicking the Animate button, the thumbnails disappear randomly with a ripple effect. After all the thumbnails have faden away, 
+            they will quickly storm back into their original places in a cool 3D way.
+        </p>
+        <p>
+            After the thumbnails have all faden away, a cool 3D animation style will be applied to storm them back 
+            into their original place. This will use the delay() and step() functions to translate and rotate the 
+            images along the axis.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            The following code is the storm() function that is being used to bring back the images in 3D style:
+            <pre>
+    function storm() {
+        $("img").each(function () {
+            d = Math.random() * 1000;
+            $(this).delay(d).animate({ opacity: 1 }, {
+                step: function (n) {
+                    //rotating the images on the Y axis from 360deg to 0deg
+                    ry = (1 - n) * 360;
+                    //translating the images from 1000px to 0px
+                    tz = (1 - n) * 1000;
+                    //applying the transformation
+                    $(this).css("transform", "rotateY(" + ry + "deg) translateZ(" + tz + "px)");
+                },
+                duration: 3000,
+                //Some easing fun. Comes from jquery easing plugin
+                easing: 'easeOutQuint',
+            })
+        })
+    }</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/html/experiment5.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/js/experiment5.js">View JavaScript Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/css/experiment3.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://thecodeplayer.com/">Code Player</a>
+        <hr />
+    </div>
+
+</body>
+</html>

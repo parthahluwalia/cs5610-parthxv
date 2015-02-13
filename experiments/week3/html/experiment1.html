@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RPN Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+
+    <script type="text/javascript" src="../js/experiment1.js"></script>
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <h1>Reverse Polish Notation Calculator</h1>
+    </div>
+
+    <div class="container">
+        <h3>Enter the Reversed Polish (Postfix) Notation of an expression</h3>
+        <input id="RPNinput" class="form-control" type="text" placeholder="Enter the expression seperated by spaces" 
+               onfocus="document.getElementById('RPNresult').value = ''"
+               onchange="document.getElementById('RPNresult').value = evalRPN(this.value)"/>
+        <br />
+        <input id="RPNresult" class="form-control" placeholder="Result" readonly />
+
+        <h2>About the Experiment</h2>
+        <hr />
+        <p>
+            RPN (Reverse Polish Notation) is a mathematical notation wherein every operator follows all of its operands, which was designed to reduce computer memory access and utilize the stack to evaluate expressions.
+        </p>
+        <p>
+            The syntax looks like:
+            <br />
+            <ul>
+                <li>evalRPN("2 2 + 3 *"); // => (2 + 2) * 3 => 12</li>
+                <li>evalRPN("2 2 3 3 / * /"); // => ((3 / 3) * 2) / 2 => 1</li>
+            </ul>
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        
+       <p>
+           Function to evaluate the RPN expression:
+        <pre>
+         function evalRPN(input) {
+            var inputArr = input.split(/\s+/);
+            var stack = [];
+            for (var i in inputArr) {
+                var token = inputArr[i];
+                if (token == +token) {
+                    stack.push(token);
+                } else {
+                    var n2 = stack.pop();
+                    var n1 = stack.pop();
+                    var re = /^[+-/*]$/;
+                    if (!re.test(token))
+                        throw new Error("Invalid expression: " + input);
+                    stack.push(eval(n1 + token + ' ' + n2));
+                }
+            }
+            if (stack.length != 1)
+                throw new Error("Invalid expression: " + input);
+            return stack.pop();
+        }
+        </pre>
+        </p>
+        
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/html/experiment1.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/js/experiment1.js">View JavaScript Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://getbootstrap.com/css/">Bootstrap CSS</a>
+        <br /><br />
+    </div>
+
+</body>
+</html>

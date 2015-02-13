@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Animate jQuery</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/experiment3.css" />
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://thecodeplayer.com/u/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../js/experiment3.js" ></script>
+
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <h1>Grid Animation with jQuery - Build Image Grid</h1>
+    </div>
+
+    <div class="container">
+        <div class="grid"></div>
+
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This is a 3 experiment series walkthrough (combined in Experiments 3, 4 and 5) showcasing the usage of $.delay() function,jQuery easing plugin 
+            and CSS transforms to animate some of the thumbnails in the grid.
+        </p>
+        <p>
+            The final outcome of the experiment is intended to be this: <br />
+            Upon clicking the Animate button, the thumbnails disappear randomly with a ripple effect. After all the thumbnails have faden away,
+            theyback into their original places in a cool 3D way.
+        </p>
+        <p>
+            So, in this first experiment of the 3-experiment walkthrough, 50 random pictures will be fetched and 
+            displayed in a grid of 600x300px dimension.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            The following code is being used to generate the grid of 50 images:
+            <pre>for (var i = 1; i <= count; i++) {
+        images += '<img src="http://thecodeplayer.com/u/uifaces/' + i + '.jpg" />';
+    }
+    //Append images to the grid
+    $(".grid").append(images);</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/html/experiment3.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/js/experiment3.js">View JavaScript Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week3/css/experiment3.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://thecodeplayer.com/">Code Player</a>
+        <hr />
+    </div>
+
+</body>
+</html>
