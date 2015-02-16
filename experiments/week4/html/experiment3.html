@@ -2,23 +2,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Angular JS App</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-theme.min.css" />
     <script type="text/javascript" src="../../../javascript/angular.min.js"></script>
     <script type="text/javascript" src="../js/experiment3.js"></script>
 </head>
 <body ng-app="HelloWorldApp">
-
-    <div ng-controller="HelloWorldController">
+    <div class="jumbotron text-center">
+        <h1>Basic Template Directives in Angular JS</h1>
+    </div>
+    <div ng-controller="HelloWorldController" class="container">
         <h1>Hello World from Angular!</h1>
-        <input ng-model="hello" />
+        <input type="text" class="form-control" ng-model="hello" />
         <br />
-        {{hello}}
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        <p class="alert-info">
+            {{hello}}
         </p>
     </div>
-    <div ng-controller="HelloWorldController">
-        <h1>Other Content</h1>
-        <p>{{empName.first}} {{empName.last}}</p>
+    <div ng-controller="HelloWorldController" class="container">
+        <h2>Using ng-repeat directive in angular</h2>
+        <h3>This is the Entourage:</h3>
+        <ul>
+            <li ng-repeat="e in entourage">{{e.first}} {{e.last}}</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>About the Experiment</h2>
+        <hr />
+        <p>
+            This experiment showcases the basic directives in Angular JS like <b><i>ng-app, ng-controller, ng-model and ng-repeat.</i></b> 
+            Angular JS follows the MVC design pattern where the controller is simply a constructor function that takes a $scope parameter (HelloWorldController, in this case).
+        </p>
+        <p>
+            The concept of a scope in Angular is crucial. A scope can be seen as the glue which allows the template, model and controller to work together. Angular uses scopes, along with the information contained in the template, data model, and controller, to keep models and views separate, but in sync. Any changes made to the model are reflected in the view; any changes that occur in the view are reflected in the model.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            Below is a snippet of the controller that I'm using:
+    <pre>app.controller("HelloWorldController", 
+    function ($scope) {
+        
+        $scope.hello = "I'm bound to the blue highlighted text below! Try to change text here...";
+        var emp = {
+            first: "Vincent",
+            last: "Chase"
+        };
+        $scope.empName = emp;</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/html/experiment3.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/js/experiment3.js">View JavaScript Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="https://docs.angularjs.org/tutorial/step_02">AngularJS.org</a>
+        <hr />
     </div>
 
 </body>
