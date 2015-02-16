@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AJAX</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../js/experiment1.js"></script>
+</head>
+<body>
+    
+    <div class="jumbotron">
+        <h1 class="text-center">TV Shows Details with AJAX</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <input type="text" id="title" placeholder="Enter name of a TV Show; Example: Lost, Entourage, Friends, etc." class="form-control" />
+            <button id="getTvShow" class="btn btn-primary">Get TV Show</button>
+        </div>
+
+        <ul id ="tvSeries" class="media-list">
+
+        </ul>
+
+        <h2>About the Experiment</h2>
+        <hr />
+        <p>
+            This experiment uses an AJAX call to <a href="http://www.tvmaze.com/api">TV Maze</a> API and gets a JSONP response.
+        </p>
+
+        <p>
+            A user enters the title of the TV show he wants information about in the input box. It makes a call 
+            to the generated URL and the client recieves a JSONP response. The response is then rendered to display 
+            the respective details on the page.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            The code to make an AJAX call to the TV Maze API is specified below:
+           <pre>$("#getTvShow").click(function () {
+        var title = $("#title").val();
+        $.ajax({
+            url: "http://api.tvmaze.com/search/shows?q=" + title,
+            datatype: "json",
+            success: renderTVShows
+        });
+    });</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/html/experiment1.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/js/experiment1.js">View JavaScript Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://www.programmableweb.com/api/tvmaze/">TV Maze API</a>
+
+        <hr />
+
+    </div>
+
+</body>
+</html>
