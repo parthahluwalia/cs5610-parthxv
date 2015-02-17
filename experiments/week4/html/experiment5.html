@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular JS App</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-theme.min.css" />
+    <script src="../../../javascript/angular.min.js"></script>
+    <script src="../../../javascript/angular.min.js.map"></script>
+    <script type="text/javascript" src="../js/experiment5.js"></script>
+</head>
+<body ng-app="TVShowsApp">
+    <div class="jumbotron">
+        <h1 class="text-center">TV Maze App with Favorites List</h1>
+    </div>
+
+    <div ng-controller="TVShowsController" class="container">
+
+        <h3>List of Episodes</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Episode No.</th>
+                    <th>Air Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="episode in episodes">
+                    <td>{{episode.season}}</td>
+                    <td>{{episode.number}}</td>
+                    <td>{{episode.airdate}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Favorite TV Shows</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Premier Date</th>
+                    <th>Rating</th>
+                    <th>Summary</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tvShow in favoriteTVShows">
+                    <td>{{tvShow.show.name}}</td>
+                    <td>{{tvShow.show.premiered}}</td>
+                    <td> {{tvShow.show.rating.average}}</td>
+                    <td>{{tvShow.show.summary}}</td>
+                    <td>
+                        <button class="btn btn-info" ng-click="listOfEpisodes(tvShow)">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </button>
+                        <button class="btn btn-danger" ng-click="removeFromFavorites(tvShow)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Search TV Shows</h2>
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchByTitle" placeholder="Enter a TV show" />
+            <button ng-click="searchTVShows()" class="btn btn-default" >Go!</button>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Premier Date</th>
+                    <th>Rating</th>
+                    <th>Summary</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th> <input type="text" class="form-control" ng-model="tvShow.show.name" /> </th>
+                    <th> <input type="text" class="form-control" ng-model="tvShow.show.premiered" /> </th>
+                    <th> <input type="text" class="form-control" ng-model="tvShow.show.rating.average" /> </th>
+                    <th> <input type="text" class="form-control" ng-model="tvShow.show.summary" /> </th>
+                    <th> 
+                        <button class="btn btn-success" ng-click="addTVShow()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>  
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tvShow in tvShows">
+                    <td>{{tvShow.show.name}}</td>
+                    <td>{{tvShow.show.premiered}}</td>
+                    <td> {{tvShow.show.rating.average}}</td>
+                    <!--<td><img ng-src="{{tvShow.show.image.medium}}" width="80" height="80" /></td>-->
+                    <td>{{tvShow.show.summary}}</td>
+                    <td>
+                        <button class="btn btn-info" ng-click="addToFavorites(tvShow)">
+                            <span class="glyphicon glyphicon-star"></span>
+                        </button>  
+                        <button class="btn btn-danger" ng-click="removeTVShow(tvShow)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment combines the use of Angular JS and Web APIs to demonstrate how Angular JS binds the 
+            Model, View and Controller components of a page.
+        </p>
+        <p>
+            The expeirment utilizes the TV Maze API to get the HTTP response (by making a get request) when user enters 
+            a TV show in the respective input field. Upon getting the response, a user may further customize the result 
+            by adding another TV show by entering the details in the respective input fields at the table header. A user may 
+            also remove a TV show by clicking the coressponding "remove" button.
+        </p>
+        <p>
+            Some more features have been added in this experiment, to add the TV Shows to a favorites list by clicking on "Favorite" icon. 
+            Also, one can view the list of episodes of the favorite TV Shows by clicking the blue-eye icon next to a favorite TV Show. 
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            Below is the function that is being used to make a get request to the TV Maze API. The error handling is done by the error method.
+        <pre>$scope.favoriteTVShows = [];
+    $scope.addToFavorites = function (tvShow) {
+        $scope.favoriteTVShows.push(tvShow);
+    };
+    $scope.removeFromTVShows = function (tvShow) {
+        var index = $scope.favoriteTVShows.indexOf(tvShow);
+        $scope.favoriteTVShows.splice(index, 1);
+    };
+    $scope.listOfEpisodes = function (tvShow) {
+        $http.get("http://api.tvmaze.com/shows/" + tvShow.show.id + "/episodes")
+            .success(function (response) {
+                $scope.episodes = response;
+            });
+    };</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/html/experiment5.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/js/experiment5.js">View JavaScript Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="https://www.youtube.com/watch?v=Kan1sMNOlIc">Jose Annunziato</a>
+        <hr />
+    </div>
+</body>
+</html>

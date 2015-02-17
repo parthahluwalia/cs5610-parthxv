@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week4/week4Story.txt What is next?
+html/experiment1.html TV Shows Details with AJAX
+html/experiment2.html TV Shows Details with AJAX and Local Storage
+html/experiment3.html Basic Template Directives in Angular JS
+html/experiment4.html A Simple TV Maze App
+html/experiment5.html TV Maze App with Favorites List
