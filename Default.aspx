@@ -65,16 +65,6 @@
                 EXPERIMENTS
                 </a></li>
             <li><a href="#" class="bottom">
-                
-                <!-- Container -->
-                <div class="thumb">
-	                <!-- Image -->
-	                <a href="#">
-		                <!-- Label -->
-		                <span>Three-eyed Robot</span>
-	                </a>
-                </div>
-
                 PROJECT 
                 </a></li>
             <li><a href="https://github.com/parthxv/cs5610-parthxv" class="bottom">GITHUB</a></li>
@@ -84,7 +74,8 @@
 
     </div>
     
-    
+    
+
 </form>
 
 </body>
