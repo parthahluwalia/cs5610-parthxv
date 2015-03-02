@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Sentiment Analysis App</title>
+    <link rel="stylesheet" href="stylesheet/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheet/bootstrap-theme.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular.min.js.map"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-route.min.js.map"></script>
+    <script src="js/wk6-exp3.js"></script>
+</head>
+<body ng-app="SentimentApp">
+
+    <div class="jumbotron text-center">
+        <h1>A Basic Sentiment Analysis App</h1>
+    </div>
+
+    <div class="container" ng-controller="SentimentController">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Phrase Being Analyzed</th>
+                    <th>Sentiment Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sentiment in sentiments">
+                    <td>{{sentiment.phrase}}</td>
+                    <td>{{sentiment.score}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

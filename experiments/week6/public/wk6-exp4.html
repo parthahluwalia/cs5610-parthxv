@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Sentiment Analysis App</title>
+    <link rel="stylesheet" href="stylesheet/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheet/bootstrap-theme.css" />
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheet/wk6.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/bundle.js"></script>
+</head>
+<body ng-app="SentimentApp">
+
+    <div class="jumbotron text-center">
+        <h1>Sentiment Analysis App - Evaluate Phrase Sentiments</h1>
+    </div>
+
+    <div class="container" ng-controller="SentimentController">
+        <div class="input-group col-lg-6">
+            <input class="form-control" type="text" placeholder="Enter the phrase to be analyzed" ng-model="phrase" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="evaluateSentiment()">Analyze</button>
+            </span>
+        </div>
+
+        <div ng-show="analysis" class="analyzedScore">
+            <h2>Sentiment Score / Polarity: {{analysis.score}}</h2>
+            <div ng-show="analysis.words.length > 0">
+                <h2>Words matched</h2>
+                <ul>
+                    <li ng-repeat="word in analysis.words">
+                        <h3>{{word}}</h3>
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-show="analysis.words.length == 0">
+                <h3>No words matched</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
