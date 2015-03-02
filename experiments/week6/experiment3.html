@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Node.js Intro</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Combining node.js and AngularJS</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/experiment3">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment combines node.js and AngularJS in order for them to interact with each other. It uses the controller 
+            to make an http get request to the simple sentiment API created in the last experiment and renders the JSON response 
+            and show it as a table.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>app.controller("SentimentController", function ($scope, $http) {
+    $http.get('/experiment2/api/sentiment')
+        .success(function (response) {
+            $scope.sentiments = response;
+        });
+});</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/wk6-exp3.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/js/wk6-exp3.js">View JS Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/server.js">View Server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/package.json">View package.json</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/stylesheet/wk6.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="https://www.youtube.com/watch?v=WGnQAgk2dz4">Prof. Jose Annunziato</a>
+        <hr />
+    </div>
+
+</body>
+</html>
