@@ -1,0 +1,29 @@
+﻿<h1>{{currentUser.username}}'s Profile</h1>
+
+<div ng-show="savedWeather.length > 0">
+    <h2>Showing your saved weather reports</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Sunrise</th>
+                <th>Sunset</th>
+                <th>MaxTempC</th>
+                <th>MinTempC</th>
+                <th>MaxTempF</th>
+                <th>MinTempF</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="weather in savedWeather">
+                <td>{{weather.date}}</td>
+                <td>{{weather.astronomy[0].sunrise}}</td>
+                <td>{{weather.astronomy[0].sunset}}</td>
+                <td>{{weather.maxtempC}}</td>
+                <td>{{weather.mintempC}}</td>
+                <td>{{weather.maxtempF}}</td>
+                <td>{{weather.mintempF}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'express-generator@3.4.x' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose cache add [ 'express-generator@3.4.x', null ]
+6 verbose cache add name=undefined spec="express-generator@3.4.x" args=["express-generator@3.4.x",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'express-generator@3.4.x',
+7 verbose parsed url   path: 'express-generator@3.4.x',
+7 verbose parsed url   href: 'express-generator@3.4.x' }
+8 verbose cache add name="express-generator" spec="3.4.x" args=["express-generator","3.4.x"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '3.4.x',
+9 verbose parsed url   path: '3.4.x',
+9 verbose parsed url   href: '3.4.x' }
+10 verbose addNamed [ 'express-generator', '3.4.x' ]
+11 verbose addNamed [ null, '>=3.4.0-0 <3.5.0-0' ]
+12 silly lockFile 53841c79-express-generator-3-4-x express-generator@3.4.x
+13 verbose lock express-generator@3.4.x C:\Users\Parth\AppData\Roaming\npm-cache\53841c79-express-generator-3-4-x.lock
+14 silly addNameRange { name: 'express-generator',
+14 silly addNameRange   range: '>=3.4.0-0 <3.5.0-0',
+14 silly addNameRange   hasData: false }
+15 verbose request where is /express-generator
+16 verbose request registry https://registry.npmjs.org/
+17 verbose request id 2b7a69f881e68283
+18 verbose url raw /express-generator
+19 verbose url resolving [ 'https://registry.npmjs.org/', './express-generator' ]
+20 verbose url resolved https://registry.npmjs.org/express-generator
+21 verbose request where is https://registry.npmjs.org/express-generator
+22 info trying registry request attempt 1 at 19:16:47
+23 http GET https://registry.npmjs.org/express-generator
+24 http 200 https://registry.npmjs.org/express-generator
+25 silly registry.get cb [ 200,
+25 silly registry.get   { date: 'Fri, 20 Feb 2015 00:16:46 GMT',
+25 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+25 silly registry.get     etag: '"9LEDNBUQFES5NAC1VKJ7XDLQ3"',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'cache-control': 'max-age=60',
+25 silly registry.get     'content-length': '21724',
+25 silly registry.get     'accept-ranges': 'bytes',
+25 silly registry.get     via: '1.1 varnish',
+25 silly registry.get     age: '0',
+25 silly registry.get     'x-served-by': 'cache-iad2129-IAD',
+25 silly registry.get     'x-cache': 'HIT',
+25 silly registry.get     'x-cache-hits': '1',
+25 silly registry.get     'x-timer': 'S1424391406.048604,VS0,VE51',
+25 silly registry.get     vary: 'Accept',
+25 silly registry.get     'keep-alive': 'timeout=10, max=50',
+25 silly registry.get     connection: 'Keep-Alive' } ]
+26 silly addNameRange number 2 { name: 'express-generator',
+26 silly addNameRange   range: '>=3.4.0-0 <3.5.0-0',
+26 silly addNameRange   hasData: true }
+27 silly addNameRange versions [ 'express-generator',
+27 silly addNameRange   [ '1.0.0',
+27 silly addNameRange     '3.0.0',
+27 silly addNameRange     '4.0.0',
+27 silly addNameRange     '4.2.0',
+27 silly addNameRange     '4.8.0',
+27 silly addNameRange     '4.9.0',
+27 silly addNameRange     '4.10.0',
+27 silly addNameRange     '4.11.0',
+27 silly addNameRange     '4.11.1',
+27 silly addNameRange     '4.11.2' ] ]
+28 silly lockFile 53841c79-express-generator-3-4-x express-generator@3.4.x
+29 silly lockFile 53841c79-express-generator-3-4-x express-generator@3.4.x
+30 error notarget No compatible version found: express-generator@'>=3.4.0-0 <3.5.0-0'
+30 error notarget Valid install targets:
+30 error notarget ["1.0.0","3.0.0","4.0.0","4.2.0","4.8.0","4.9.0","4.10.0","4.11.0","4.11.1","4.11.2"]
+30 error notarget
+30 error notarget This is most likely not a problem with npm itself.
+30 error notarget In most cases you or one of your dependencies are requesting
+30 error notarget a package version that doesn't exist.
+31 error System Windows_NT 6.2.9200
+32 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "express-generator@3.4.x"
+33 error cwd C:\Users\Parth\Desktop\Dropbox\School\CS5610\GitHub\cs5610-parthxv\experiments\week5
+34 error node -v v0.10.35
+35 error npm -v 1.4.28
+36 error code ETARGET
+37 verbose exit [ 1, true ]

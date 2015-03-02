@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-theme.min.css" />
+    <script src="../../../javascript/angular.min.js"></script>
+    <script src="../../../javascript/angular-route.min.js"></script>
+    <script src="../js/experiment5.js"></script>
+    <script src="../js/exp3-service.js"></script>
+</head>
+<body ng-app="WeatherApp">
+    <div class="container">
+        <div class="header">
+            <nav ng-controller="NavCtrl">
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#/home">Home</a></li>
+                    <li role="presentation" ng-show="currentUser"><a href="#/profile/{{currentUser.username}}">Profile</a></li>
+                    <li role="presentation" ng-show="currentUser" ng-click="logout()"><a href="#/home">Logout</a></li>
+                </ul>
+                <form class="navbar-form navbar-right nav-pills pull-right" ng-show="!currentUser">
+                    <div class="form-group">
+                        <input ng-model="username" type="text" placeholder="Username: rishi" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input ng-model="password" type="password" placeholder="Password: duggal" class="form-control">
+                    </div>
+                    <button role="presentation" class="active btn-success" ng-click="login()">Sign in</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                </form>
+            </nav>
+            <h3 class="text-muted">Weather App</h3>
+            <hr />
+
+            <div class="jumbotron">
+                <h1 class="text-center">Weather App - Maintain User Specific Profile</h1>
+            </div>
+        </div>
+
+        <div ng-view>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            The experiment extends the previous experiment to allow a user to save the weather in his profile.
+        </p>
+        <p>
+            When a user logs into his profile and performs search for a weather at a particular location, he can 
+            save the results into his profile, which will be displayed whenever he logs into his account again.
+        </p>
+        <p>
+            <h4>Login Details:</h4>
+            Username: rishi<br />
+            Password: duggal
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            Below is the code snippet to achieve the functionality:
+        <pre>weatherApp.factory('userService', function () {
+    var currentUser = null;
+    var savedWeather1 = [];
+    var savedWeather2 = [];
+    var users = [
+        { username: "parth", password: "parth", savedweather: savedWeather1  },
+        { username: "rishi", password: "duggal", savedWeather: savedWeather2 }
+    ];
+    var currentUser = userService.getCurrentUser();
+    var savedWeather = currentUser.savedweather;
+    var saveWeather = function (day) {
+        savedWeather.push(day);
+    };
+    var getSavedWeather = function () {
+        return savedWeather;
+    };</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week5/html/experiment5.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week5/weather/home2.html">Home Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week5/weather/profile.html">Profile Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week5/js/experiment5.js">View JavaScript Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week5/js/exp5-service.js">View Services</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="https://www.youtube.com/watch?v=Kan1sMNOlIc">Jose Annunziato</a>
+        <hr />
+    </div>
+
+</body>
+</html>

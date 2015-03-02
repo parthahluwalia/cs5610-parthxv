@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../css/bootstrap-theme.min.css" />
+    <script src="../../../javascript/angular.min.js"></script>
+    <script src="../../../javascript/angular-route.min.js"></script>
+    <script type="text/javascript" src="../js/experiment2.js"></script>
+</head>
+<body ng-app="WeatherApp">
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#/home">Home</a></li>
+                    <li role="presentation"><a href="#/savedWeather">Saved Weather</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Weather App</h3>
+            <hr />
+
+            <div class="jumbotron">
+                <h1 class="text-center">Weather Forecast App</h1>
+            </div>
+        </div>
+
+        <div ng-view>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment combines the routing module of Angular JS and Web APIs to demonstrate how Angular JS binds the 
+            Model, View and Controller components of a page.
+        </p>
+        <p>
+           A user searches
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            Below is the function that is being used to make a get request to the TV Maze API. The error handling is done by the error method.
+        <pre>$scope.searchTVShows = function () {
+        var title = $scope.searchByTitle;
+        $http.get("http://api.tvmaze.com/search/shows?q=" + title)
+            .success(function (response) {
+                console.log(response);
+                $scope.tvShows = response;
+            })
+            .error(function (data) {
+                console.log("Error while sending request");
+            });
+    };</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/html/experiment4.html">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/experiments/week4/js/experiment4.js">View JavaScript Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="https://www.youtube.com/watch?v=Kan1sMNOlIc">Jose Annunziato</a>
+        <hr />
+    </div>
+-->
+
+</body>
+</html>
