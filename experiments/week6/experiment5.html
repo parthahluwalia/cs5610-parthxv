@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Node.js Intro</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Combining node.js and AngularJS</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/experiment5">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment also uses modules browserify and sentiment to enhance the basic sentiment analysis application in 
+            a way that a user may persist the analyzed phrase in his app, and can also remove the analyzed phrase from his app 
+            by clicking on the remove button. 
+        </p>
+        <p>
+            The controller sends the respective http get, post or delete request, and the modification is 
+            actually done at the server side.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>app.get('/experiment5/api', function (req, res) {
+    res.json(analyzedSentiments);
+});
+app.post('/experiment5', function (req, res) {
+    analyzedSentiments.push(req.body);
+    res.json(analyzedSentiments);
+});
+app.delete('/experiment5/:index', function (req, res) {
+    var index = req.params.index;
+    analyzedSentiments.splice(index, 1);
+    res.json(analyzedSentiments);
+});</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/wk6-exp5.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/js/wk6-exp5.js">View JS Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/server.js">View Server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/package.json">View package.json</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/stylesheet/wk6.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="https://www.npmjs.com/">npmjs.com</a>
+        <hr />
+    </div>
+
+</body>
+</html>

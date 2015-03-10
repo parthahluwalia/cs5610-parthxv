@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week6/week6Story.txt What is next?
+experiment1.html Hello from Node.js Openshift server
+experiment2.html Creating simple Web API
+experiment3.html Combining node.js and AngularJS
+experiment4.html A Basic Sentiment Analysis App - Evaluate Sentiments
+experiment5.html A Basic Sentiment Analysis App - Persist Sentiment Phrases

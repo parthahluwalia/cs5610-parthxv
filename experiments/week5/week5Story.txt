@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week5/week5Story.txt What is next?
+html/experiment1.html Routing from Angular JS
+html/experiment2.html Weather App - Get Weather using Angular JS
+html/experiment3.html Weather App - Save Weather (Angular Routing)
+html/experiment4.html Weather App - Acommodate User Profiles (Angular Routing and Services)
+html/experiment5.html Weather App - Save weather for a User Profile
