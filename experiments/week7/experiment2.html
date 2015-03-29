@@ -8,41 +8,36 @@
 <body>
 
     <div class="jumbotron text-center">
-        <h1>Making an OAuth Connection to Twitter</h1>
+        <h1>Connecting to Twitter and Getting Tweets</h1>
     </div>
 
     <div class="container">
-        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/wk7-exp1">RHcloud Link to the Experiment</a></h3>
+        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/wk7-exp2">RHcloud Link to the Experiment</a></h3>
 
         <hr />
         <h2>About the experiment</h2>
         <hr />
         <p>
-           This experiment demonstrates making a connection to the Twitter API via oauth2 tokens. It requires creating a 
-            Twitter App and generating the consumer and access tokens, which will then be used to make connection through 
-            the twitter access object created.
+           This experiment demonstrates making a connection to the Twitter API and fetching the tweets based on a phrase entered by a user. 
+            The tweets are fetched and the corresponding response details are then displayed to the user.
         </p>
 
         <h2>Code Snippet</h2>
         <hr />
         <p>
-            <pre>var config = {
-    consumer_key: '',
-    consumer_secret: '',
-    access_token_key: '',
-    access_token_secret: ''
-};
-
-app.get('/wk7-exp1/connect', function (req, res) {
-    var twitterClient = new twitter(config);
-    res.json(twitterClient);
-});</pre>
+            <pre>var twitterClient = new twitter(config);
+    //Search
+    console.log(searchText);
+    twitterClient.get('search/tweets', { q: searchText }, function (error, tweets, response) {
+        //console.log(tweets);
+        res.json(tweets);
+    });</pre>
         </p>
 
         <h2>Source Code</h2>
         <hr />
         <ul>
-            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/wk7-exp1.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/wk7-exp2.html">View HTML Source</a></li>
             <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/js/wk7-exp1.js">View JS Source</a></li>
             <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/server.js">View server.js</a></li>
             <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/package.json">View package.json</a></li>

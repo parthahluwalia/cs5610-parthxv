@@ -17,7 +17,7 @@ app.controller("TwitterSentimentController", function ($scope, $http) {
                 for (var i in tweetSentiment) {
                     comparativeScore += tweetSentiment[i].sentiment.comparative;
                 }
-                comparativeScore = comparativeScore / 10;
+                comparativeScore = comparativeScore / tweetSentiment.length;
                 console.log(comparativeScore);
                 $scope.comparativeScore = comparativeScore; //Comparitive score of all the tweets
             });

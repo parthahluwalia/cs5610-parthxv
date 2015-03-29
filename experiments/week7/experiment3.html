@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Generating Sentiment Score for Each Tweet</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/wk7-exp3">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+           This experiment calculates a sentiment score for each of the tweet that has been fetched based on a user's 
+            input. The sentiment analysis is based on text analysis and computational linguistics to identify and extract subjective information in source materials. 
+            The respective score generated for each tweet is then displayed. 
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>var tweetSentiment = [];
+    twitterClient.get('search/tweets', { q: searchText }, function (error, tweets, response) {
+        var status = tweets.statuses;
+        for (var i in status) {
+            tweetSentiment.push({
+                tweet: status[i].text,
+                sentiment: sentiment(status[i].text)
+            });
+            
+        }
+        res.json(tweetSentiment);</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/wk7-exp3.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/js/wk7-exp3.js">View JS Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://www.npmjs.com/package/twitter">TwitterJS</a></li>
+            <li><a href="https://www.npmjs.com/package/sentiment">SentimentJS</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>
