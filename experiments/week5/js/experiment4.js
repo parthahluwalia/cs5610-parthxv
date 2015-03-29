@@ -54,7 +54,7 @@ weatherApp.controller("NavCtrl", function ($scope, userService) {
     };
 
     $scope.logout = function () {
-        $scope.currentUser = null;
+        $scope.currentUser = null; 
         UserService.logout();
         $scope.username = null;
         $scope.password = null;

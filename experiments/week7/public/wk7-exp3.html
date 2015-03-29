@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Gather Tweets</title>
+    <link rel="stylesheet" href="stylesheet/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheet/bootstrap-theme.css" />
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheet/wk6.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/wk7-exp3.js"></script>
+</head>
+<body ng-app="TwitterSentiment">
+
+    <div class="jumbotron text-center">
+        <h1>Generating Sentiment Score for Each Tweet</h1>
+    </div>
+
+    <div class="container" ng-controller="TwitterSentimentController">
+
+        <div class="input-group col-lg-6 analyzedScore">
+            <input class="form-control" type="text" placeholder="Enter a phrase" ng-model="searchText" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="getTweets()">Search</button>
+            </span>
+        </div>
+
+        <br /><br />
+        <table class="table table-striped" ng-show="tweetSentiments">
+            <thead>
+                <tr>
+                    <th>Tweet</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tweetSentiment in tweetSentiments">
+                    <td>{{tweetSentiment.tweet}}</td>
+                    <td>{{tweetSentiment.sentiment.score}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+</body>
+</html>

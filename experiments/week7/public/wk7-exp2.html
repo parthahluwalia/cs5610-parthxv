@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Gather Tweets</title>
+    <link rel="stylesheet" href="stylesheet/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheet/bootstrap-theme.css" />
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheet/wk6.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/wk7-exp1.js"></script>
+</head>
+<body ng-app="TwitterConnect">
+
+    <div class="jumbotron text-center">
+        <h1>Connecting to Twitter and Getting Tweets</h1>
+    </div>
+
+    <div class="container" ng-controller="TwitterConnectController">
+
+        <div class="input-group col-lg-6 analyzedScore">
+            <input class="form-control" type="text" placeholder="Enter a phrase" ng-model="searchText" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="getTweets()">Search</button>
+            </span>
+        </div>
+
+        <br /><br />
+        <table class="table table-striped" ng-show="tweetsFetched">
+            <thead>
+                <tr>
+                    <th>Tweet</th>
+                    <th>Tweet Time</th>
+                    <th>Favorite Count</th>
+                    <th>Retweet Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tweet in tweetsFetched.statuses">
+                    <td>{{tweet.text}}</td>
+                    <td>{{tweet.created_at}}</td>
+                    <td>{{tweet.favorite_count}}</td>
+                    <td>{{tweet.retweet_count}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+</body>
+</html>

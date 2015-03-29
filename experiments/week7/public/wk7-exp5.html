@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Post Tweets</title>
+    <link rel="stylesheet" href="stylesheet/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheet/bootstrap-theme.css" />
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheet/wk6.css" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/wk7-exp5.js"></script>
+</head>
+<body ng-app="PostTweet">
+
+    <div class="jumbotron text-center">
+        <h1>Posting a Tweet From the App</h1>
+    </div>
+
+    <div class="container" ng-controller="PostTweetController">
+
+        <div class="input-group col-lg-6 analyzedScore">
+            <input class="form-control" type="text" placeholder="Enter the tweet you want to post" ng-model="tweetText" disabled/>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="postTweet(tweetText)" disabled>Post Tweet</button>
+            </span>
+        </div>
+        
+        <br /><br />
+        <h4 class="text-danger">The text field and the button have been purposely disabled, as the app currently uses Developer's Twitter account to post a tweet.</h4>
+
+        <br /><br />
+        <h4>Upon Posting a tweet "Posting a tweet from my App. Booyah!", it will be displayed on the Twitter timeline...</h4>
+        <br />
+        <img src="images/tweet.jpeg" />
+    </div>
+
+</body>
+</html>

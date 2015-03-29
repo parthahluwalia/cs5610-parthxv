@@ -5,7 +5,10 @@
         $.ajax({
             url: "http://api.tvmaze.com/search/shows?q=" + title,
             datatype: "json",
-            success: renderTVShows
+            success: renderTVShows,
+            error : function (err) {
+                console.log("error!!!!");
+            }
         });
     });
     
@@ -13,6 +16,8 @@
 
 var renderTVShows = function (tvShows) {
     
+    console.log(tvShows);
+
     var ul = $("#tvSeries");
     ul.empty();
 
@@ -29,7 +34,7 @@ var renderTVShows = function (tvShows) {
         var image = tvShow.show.image.medium;
         var summary = tvShow.show.summary;
         var rating = " (Rating: " + tvShow.score + ")";
-        console.log(name);
+        //console.log(name);
 
         var li = $("<li>")
                     .append(titleLink)

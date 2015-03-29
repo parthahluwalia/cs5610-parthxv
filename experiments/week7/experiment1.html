@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Node.js Intro</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Hello from node.js - OpenShift Server</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment is the most basic experiment in node.js that uses the index.html file in the public folder by default to load when it sees the RHcloud home path.
+            The express app will use the statement - <b><i> app.use(express.static(path.join(__dirname, '/public'))) </i></b> - in order to achieve this functionality.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>var express = require('express');
+var path = require('path');
+var app = express();
+var bodyParser = require('body-parser');
+var multer = require('multer');
+app.use(express.static(path.join(__dirname, '/public')));</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/index.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/server.js">View Server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/package.json">View package.json</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week6/public/stylesheet/wk6.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <a href="http://expressjs.com/">ExpressJS</a>
+    </div>
+
+</body>
+</html>
