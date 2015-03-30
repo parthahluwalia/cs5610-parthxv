@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Post Tweets</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Posting Tweets From App</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/#/parallax1">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment demonstrates the sentiment of a subject i.e. how a subject of interest is feeling at the moment. 
+            The sentiment has been evaluated on the tweets fetched about the subject of concern. A comparative score of at most the last 
+            15 tweets posted about the subject is calculated and a sentiment is then calculated based on the current score. The sentiment 
+            can change based on how frequently the tweets are posted about that subject.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>if (0 < comparative && comparative < 0.15) {
+                    $scope.phraseSentiment = "fine"
+                } else if (0.15 <= comparative && comparative < 0.3) {
+                    $scope.phraseSentiment = "incredible"
+                } else if (0.3 < comparative && comparative < 0.6) {
+                    $scope.phraseSentiment = "fantabulous"
+                } else if (comparative >= 0.6) {
+                    $scope.phraseSentiment = "spectacularly out of the world"
+                } else if (comparative === 0) {
+                    $scope.phraseSentiment = "okay"
+                } else if (-0.1 < comparative && comparative < 0) {
+                    $scope.phraseSentiment = "not that good"
+                } else if (-0.25 < comparative && comparative <= -0.1) {
+                    $scope.phraseSentiment = "lousy"
+                } else if (-0.55 < comparative && comparative <= 0.25) {
+                    $scope.phraseSentiment = "awful"
+                } else if (comparative <= -0.55) {
+                    $scope.phraseSentiment = "awfully bad"
+                }</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week8/public/index.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week8/public/js/phrase-sentiment.js">View JS Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week8/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week8/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://www.npmjs.com/package/twitter">TwitterJS</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>

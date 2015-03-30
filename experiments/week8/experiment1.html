@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Post Tweets</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Posting Tweets From App</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://experiments-cs5610parthxv.rhcloud.com/wk7-exp5">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment demonstrates how to post a tweet from an app extending the study done in last week's last experiment. The great twitter API has
+            made this provision avaliable to Twitter developers by providing <b>"statuses/update"</b> as a POST
+            method. Hence this updates the authenticating user’s current status, also known as tweeting.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre> $scope.postTweet = function (tweetText) {
+        $http.post('/wk7-exp5/' + tweetText)
+            .success(function (response) {
+                console.log(response);
+            });
+    };</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/wk7-exp5.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/public/js/wk7-exp5.js">View JS Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week7/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://www.npmjs.com/package/twitter">TwitterJS</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>
