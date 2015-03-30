@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Contact Us and Maps</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Adding Contact Us and Maps in the App</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://localhost:3000/#/section-contact">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            This experiment adds the "Contact Us" and "Google Maps" in the app, in order for the user to submit a query to contact us and view us on Maps. 
+            This is minimalistic at this point and has no back-end script associated with it as of now.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 11,
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+        // How you would like to style the map.
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{ featureType: "all", elementType: "all", stylers: [{ invert_lightness: true }, { saturation: 10 }, { lightness: 30 }, { gamma: 0.5 }, { hue: "#1C705B" }] }]
+    };</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week8/public/index.html">View HTML Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week8/public/js/googleMap_PA.js">View JS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://www.npmjs.com/package/twitter">TwitterJS</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>
