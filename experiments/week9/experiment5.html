@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Twitter Friends</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
 </head>
 <body>
 
     <div class="jumbotron text-center">
-        <h1>Getting Logged In User's Profile</h1>
+        <h1>Twitter Friends</h1>
     </div>
 
     <div class="container">
@@ -18,48 +18,18 @@
         <h2>About the experiment</h2>
         <hr />
         <p>
-           Once a user has logged in to the app through Twitter, the app will check if user's profile exists in the Application's database, if it does, it will fetch the respective user's data and display on the screen. 
-            If a user is not present in the database, his profile will be stored in the app's database. All of this 
-            will be done after a user has been authenticated via Twitter strategy for PassportJS. 
+           When a user has logged in to his profile, one of the tabs that will be displayed to them is their twitter friends i.e. people they are following on Twitter. 
+            In order to implement this another REST API of Twitter - friends/list - has been used, so that as the logged in user clicks on "Twitter Following" 
+            tab, they get their the people they are following on Twitter.
         </p>
 
         <h2>Code Snippet</h2>
         <hr />
         <p>
-            <pre>UserModel.findOne({ twitterId: profile.id }, function (err, user) {
-              if (err) {
-                  console.log(err);
-              }
-              if (!err && user != null) {
-                  done(null, user);
-              } else {
-                  //Render the received profile pic to a bigger one!
-                  var imgURL = profile._json.profile_image_url;
-                  if (imgURL.substring(imgURL.length - 4) === "jpeg") {
-                      var profile_img_400x400 = imgURL.substring(0, imgURL.length - 12) + "_400x400.jpeg";
-                  } else {
-                      var profile_img_400x400 = imgURL.substring(0, imgURL.length - 11) + "_400x400.jpg";
-                  }
-                  //Generate the user object to be inserted in the database
-                  var user = new UserModel({
-                      twitterId: profile.id,
-                      username: profile.username,
-                      displayName: profile.displayName,
-                      description: profile._json.description,
-                      twitter_followers_count: profile._json.followers_count,
-                      twitter_friends_count: profile._json.friends_count,
-                      profile_image_url: profile_img_400x400
-                  });
-                  user.save(function (err) {
-                      if (err) {
-                          console.log(err);
-                      } else {
-                          console.log("Saving user...");
-                          done(null, user);
-                      }
-                  });
-              }
-          });</pre>
+            <pre>twitterClient.get('friends/list', { user_id: twitterId }, function (error, friends, response) {
+        //console.log(response);
+        res.json(friends);
+    });</pre>
         </p>
 
         <h2>Source Code</h2>
@@ -75,7 +45,6 @@
         <hr />
         <ul>
             <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
-            <li><a href="http://passportjs.org/">PassportJS</a></li>
         </ul>
         <hr />
     </div>
