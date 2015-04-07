@@ -7,4 +7,4 @@
 ../story/index.htm?../experiments/week6/week6Story.txt Week-6: Node.js Experiments
 ../story/index.htm?../experiments/week7/week7Story.txt Week-7: Sentiment Analysis App using MEAN stack
 ../story/index.htm?../experiments/week8/week8Story.txt Week-8: Sentiment Analysis Social Network - Subject Module
-../story/index.htm?../experiments/week9/week9Story.txt Week-9: Sentiments Social Network - Twitter Strategy and REST APIs
+../story/index.htm?../experiments/week9/week9Story.txt Week-9: Sentiments Social Network - PassportJS & Twitter REST APIs

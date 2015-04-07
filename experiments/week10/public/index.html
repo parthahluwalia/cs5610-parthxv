@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html class="no-js" ng-app="SentimentAnalysisApp">
+<!--<![endif]-->
+<head>
+    <title>Sentiments Network</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- skin -->
+    <link rel="stylesheet" href="skin/default.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+
+    <!--My Scripts -->
+    <script src="js/phrase-sentiment.js"></script>
+    <script src="js/people-search.js"></script>
+    <script src="js/user-ctrl.js"></script>
+    <script src="js/service.js"></script>
+</head>
+
+<body>
+
+    <!--<section id="header" class="appear"></section>-->
+    <!-- <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:50px; height:50px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);"> -->
+    <div class="navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="fa fa-bars color-white"></span>
+                </button>
+                <h1>
+                    <a class="navbar-brand" href="#/" data-0="line-height:50px;" data-300="line-height:50px;">
+                        Sentiments Network
+                    </a>
+                </h1>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" data-0="margin-top:10px;" data-300="margin-top:2px;">
+                    <li><a href="#/parallax1">Subject</a></li>
+
+                    <li>
+                        <a href="#/people">People</a>
+                    </li>
+                    <li><a href="#/contact">Contact</a></li>
+                    <li ng-controller="UserCtrl">
+                        <a href="" ng-click="goToUserProfile()">Profile</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view>
+
+    </div>
+
+    <!--
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/googleMap_PA.js"></script>
+        -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Twitter Followers</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Twitter Followers</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+           When a user has logged in to his profile, one of the tabs that will be displayed to them is their twitter followers i.e. people who are following them on Twitter. 
+            In order to implement this another REST API of Twitter - followers/list - has been used, so that as the logged in user clicks on "Twitter Followers" 
+            tab, they get their the people they are following on Twitter.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>twitterClient.get('followers/list', { user_id: twitterId }, function (error, followers, response) {
+        //console.log(followers);
+        res.json(followers);
+    });</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/views/account.html">View User Account Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/js/user-ctrl.js">View User Controller</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>

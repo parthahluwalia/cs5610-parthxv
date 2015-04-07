@@ -1,0 +1,155 @@
+﻿<!--Nav-->
+<section class="user-account">
+    <div class="container">
+        <div class="account-header">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img ng-src="{{currentUserDetails.profile_image_url}}" height="200" width="200" class="profile-img" />
+                </div>
+                <div class="col-sm-5">
+                    <div>&nbsp;</div>
+                    <h2 class="bigquote color-white">{{currentUserDetails.displayName}}</h2>
+                    <h5>@{{currentUserDetails.username}}</h5>
+                    <h4>{{currentUserDetails.description}}</h4>
+                </div>
+
+            </div>
+            <div class="row account-tabs">
+                <div class="col-xs-3">
+                </div>
+
+                <a href="" class="color-white" ng-click="getFriends(currentUserDetails.twitterId)">
+                    <div class="col-xs-2 followers-following">
+                        <span>Twitter Following</span><br />
+                        <span class="text-bold">{{currentUserDetails.twitter_friends_count}}</span>
+                    </div>
+                </a>
+                <a href="" class="color-white" ng-click="getFollowers(currentUserDetails.twitterId)">
+                    <div class="col-xs-2 followers-following">
+                        <span>Twitter Followers</span><br />
+                        <span class="text-bold">{{currentUserDetails.twitter_followers_count}}</span>
+                    </div>
+                </a>
+                <a href="" class="color-white" ng-click="getMonitoring(currentUserDetails.twitterId)">
+                    <div class="col-xs-2">
+                        <span>Monitoring</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Sentiments of people being monitored-->
+<section ng-show="showMonitoredSentiments">
+    <div class="container">
+        <h2>Monitored People Sentiments</h2>  
+        <button class="btn btn-primary form-control">Refresh Results</button>  
+        <br /><br />    
+        <div class="row" ng-repeat="monitoredSentiment in monitoredSentiments">
+            <div class="col-md-1">
+                <img ng-src="{{monitoredSentiment.monitoredUser.profile_image_url}}" class="search-result-image" />
+            </div>
+            <div class="col-md-9">
+                <button class="user-name-link" ng-click="showUserProfile(monitoredSentiment.monitoredUser)"><b>{{monitoredSentiment.monitoredUser.name}}</b></button>&nbsp;(@{{monitoredSentiment.monitoredUser.screen_name}}) <span class="status-text"> is feeling <b>{{monitoredSentiment.sentimentAdj}}</b>, at the moment. </span>
+                <br />
+                <div class="fadein fadeout" ng-show="showAnalysis">
+                    <span class="black-text">Tweet Analyzed: </span> {{monitoredSentiment.monitoredUser.status.text}}
+                    <br />
+                    <span class="black-text">Calculated Score: </span> {{monitoredSentiment.sentiment.score}} <br />
+                    <span ng-show="monitoredSentiment.sentiment.words.length > 0">
+                        <span class="black-text">Words Matched:</span> &nbsp;<span ng-repeat="word in monitoredSentiment.sentiment.words">{{word}} &nbsp;&nbsp;</span><br />
+                    </span>
+                    <span ng-show="monitoredSentiment.sentiment.positive.length > 0">
+                        <span class="black-text">Postive Words:</span> &nbsp;<span ng-repeat="positive in monitoredSentiment.sentiment.positive">{{positive}} &nbsp;&nbsp;</span><br />
+                    </span>
+                    <span ng-show="monitoredSentiment.sentiment.negative.length > 0">
+                        <span class="black-text">Negative Words:</span> &nbsp;<span ng-repeat="negative in monitoredSentiment.sentiment.negative">{{negative}} &nbsp;&nbsp;</span><br />
+                    </span>
+                </div>
+                <hr />
+            </div>
+            <div class="col-md-2">
+                <a href="" class="pull-right" ng-click="showAnalysis = !showAnalysis">Watch Analysis</a>
+            </div>
+        </div>
+         
+    </div>
+
+</section>
+
+<!--Twitter Following-->
+<section ng-show="showTwitterFriends">
+    <div class="container">
+        <h2>Twitter Friend List</h2>
+        <div class="row" ng-repeat="friend in friendList.users">
+            <div class="col-md-1">
+                <img ng-src="{{friend.profile_image_url}}" class="search-result-image" />
+            </div>
+            <div class="col-md-11">
+                <div>
+                    <button class="user-name-link" ng-click="showUserProfile(friend)"><b>{{friend.name}}</b></button>&nbsp;&nbsp;@{{friend.screen_name}}
+                    &nbsp;
+                    <button class="btn btn-primary pull-right" ng-click="followUser(friend)">Monitor</button>
+                </div>
+                <div>
+                    {{friend.description}}
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Twitter Followers-->
+<section ng-show="showTwitterFollowers">
+
+    <div class="container">
+        <h2>Twitter Followers!</h2>
+        <div class="row" ng-repeat="follower in followerList.users">
+            <div class="col-md-1">
+                <img ng-src="{{follower.profile_image_url}}" class="search-result-image" />
+            </div>
+            <div class="col-md-11">
+                <div>
+                    <button class="user-name-link" ng-click="showUserProfile(follower)"><b>{{follower.name}}</b></button>&nbsp;&nbsp;@{{follower.screen_name}}
+                    &nbsp;
+                    <button class="btn btn-primary pull-right" ng-click="followUser(follower)">Monitor</button>
+                </div>
+                <div>
+                    {{follower.description}}
+                </div>
+                <hr />
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    </div>
+</section>
+
+<!--People Monitored in the App-->
+<section ng-show="showMonitoredPeople">
+    <div class="container">
+        <h2>People being Monitored</h2>
+        <div class="row" ng-repeat="person in monitoredPeople">
+            <div class="col-md-1">
+                <img ng-src="{{person.profile_image_url}}" class="search-result-image" />
+            </div>
+            <div class="col-md-11">
+                <div>
+                    <button class="user-name-link" ng-click="showUserProfile(person)"><b>{{person.name}}</b></button>&nbsp;&nbsp;@{{person.screen_name}}
+                    &nbsp;
+                    <button class="btn btn-danger pull-right" ng-click="unfollowUser(person)">UnMonitor</button>
+                </div>
+                <div>
+                    {{person.description}}
+                </div>
+                <hr />
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    </div>
+</section>
+
+
+  
