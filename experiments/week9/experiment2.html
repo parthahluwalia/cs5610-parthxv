@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Post Tweets</title>
+    <title>Showing the Analysis</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
 </head>
 <body>
 
     <div class="jumbotron text-center">
-        <h1>implementing users/search Twitter API</h1>
+        <h1>Showing the Analysis of Subjects</h1>
     </div>
 
     <div class="container">
@@ -18,20 +18,25 @@
         <h2>About the experiment</h2>
         <hr />
         <p>
-            In order to search people in the network, a person could go to the "People" tab in the app and 
-            search for a user using their twitter username, a user's name, etc. and the results will be shown in 
-            the same view.
+           This experiment demonstrates the analysis that has been performed based on which a phrase adjective and sentiment score has been calculated. 
+        </p>
+        <p>
+            The analysis shows the tweet that has been analyzed about the subject, the words matched in the AFINN word-list, the positive words, the negative words and the score that has been calculated. 
+            The average comparative score calculated is shown at the top of the Analysis.
         </p>
 
         <h2>Code Snippet</h2>
         <hr />
         <p>
-            <pre>app.get('/user-search/:user', function (req, res) {
-    var user = req.params.user;
-    twitterClient.get('users/search', { q: user }, function (error, users, response) {
-        res.json(users);
-    });
-});</pre>
+            <pre>&lt;span class="status-text">{{tweetSentiment.tweet.text}}&lt;/span>
+&lt;br />
+AFINN Word-list Matches: &lt;span ng-repeat="word in tweetSentiment.sentiment.words">"{{word}}" &nbsp;&lt;/span>
+&lt;br />
+Positive Words: &lt;span ng-repeat="positiveWord in tweetSentiment.sentiment.positive">"{{positiveWord}}" &nbsp;&lt;/span>
+&lt;br />
+Negative Words: &lt;span ng-repeat="negativeWord in tweetSentiment.sentiment.negative">"{{negativeWord}}" &nbsp;&lt;/span>
+&lt;br />
+Calculated Score: {{tweetSentiment.sentiment.score}}</pre>
         </p>
 
         <h2>Source Code</h2>
