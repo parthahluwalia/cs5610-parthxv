@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Sign In Through Twitter</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            The app supports signing in through a user's Twitter Account using the PassportJS' twitter strategy. 
+            The module provided for this is passport-twitter, which ensures authentication to a user's twitter account 
+            while logging in. The twitter strategy uses the twitter app's consumer key, consumer secret and a callback URL 
+            to ensure authentication of a user.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>passport.use(new TwitterStrategy({
+    consumerKey: TWITTER_CONSUMER_KEY,
+    consumerSecret: TWITTER_CONSUMER_SECRET,
+    callbackURL: "http://project-cs5610parthxv.rhcloud.com/auth/twitter/callback"
+  },
+  function(token, tokenSecret, profile, done) {
+    // asynchronous verification, for effect...
+      process.nextTick(function () {</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week9/public/views/account.html">View User Account Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week9/public/js/user-ctrl.js">View JS Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week9/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week9/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
+            <li><a href="http://passportjs.org/guide/twitter/">PassportJS Twitter Strategy</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>
