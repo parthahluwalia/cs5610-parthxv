@@ -1,0 +1,143 @@
+﻿<!--Nav-->
+<section class="user-account">
+    <div class="container">
+        <div class="account-header">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img ng-src="{{selectedUserTimeline.profile_img}}" height="200" width="200"class="profile-img" />
+                </div>
+                <div class="col-sm-5">
+                    <div>&nbsp;</div>
+                    <h2 class="bigquote color-white">{{selectedUserTimeline.userDetails.name}}</h2>
+                    <h5>@{{selectedUserTimeline.userDetails.screen_name}}</h5>
+                    <h4>{{selectedUserTimeline.userDetails.description}}</h4>
+                </div>
+
+            </div>
+            <div class="row account-tabs">
+                <div class="col-xs-3">
+                </div>
+
+                <a href="" class="color-white" ng-click="showTweets = true">
+                    <div class="col-xs-2 followers-following">
+                        <span>Tweets</span><br />
+                        <span class="text-bold">{{selectedUserTimeline.userDetails.statuses_count}}</span>
+                    </div>
+                </a>
+
+                <a href="" class="color-white" ng-click="getFriends(selectedUserTimeline.userDetails.id)">
+                    <div class="col-xs-2 followers-following">
+                        <span>Twitter Following</span><br />
+                        <span class="text-bold">{{selectedUserTimeline.userDetails.friends_count}}</span>
+                    </div>
+                </a>
+                <a href="" class="color-white" ng-click="getFollowers(selectedUserTimeline.userDetails.id)">
+                    <div class="col-xs-2 followers-following">
+                        <span>Twitter Followers</span><br />
+                        <span class="text-bold">{{selectedUserTimeline.userDetails.followers_count}}</span>
+                    </div>
+                </a>
+                <!-- We don't have to show monitoring for a person's profile...
+                <a href="" class="color-white" ng-click="getMonitoring(currentUserDetails.twitterId)">
+                    <div class="col-xs-2">
+                        <span>Monitoring</span>
+                    </div>
+                </a>
+                -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Tweets!-->
+<section ng-show="showTweets">
+    <div class="container">
+        <div class="row" ng-repeat="status in selectedUserTimeline.statuses">
+            <div class="col-md-12">
+                <span class="status-text">{{status.text}}</span><br />
+                Retweets: {{status.retweet_count}} | Favorites: {{status.favorite_count}}
+                <br />
+                <span ng-show="status.entities.hashtags.length > 0">
+                    Hashtags: <span ng-repeat="hashtag in status.entities.hashtags">{{hashtag.text}} &nbsp;&nbsp;</span>
+                </span>
+                <br />
+                <span ng-show="status.entities.media.length > 0">
+                    <img ng-src="{{status.entities.media[0].media_url}}" height="330" width="400" class="search-result-image" />
+                </span>
+                <hr />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Twitter Following-->
+<section ng-show="showTwitterFriends">
+
+    <div class="container">
+        <h2>Twitter Friend List</h2>
+        <div class="row" ng-repeat="friend in friendList.users">
+            <div class="col-md-1">
+                <img ng-src="{{friend.profile_image_url}}" class="search-result-image" />
+            </div>
+            <div class="col-md-11">
+                <div>
+                    <button class="user-name-link" ng-click="showUserProfile(friend)"><b>{{friend.name}}</b></button>&nbsp;&nbsp;@{{friend.screen_name}}
+                    &nbsp;
+                    <button class="btn btn-primary pull-right" ng-click="followUser(friend)">Monitor</button>
+                </div>
+                <div>
+                    {{friend.description}}
+                </div>
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    </div>
+</section>
+
+<!--Twitter Followers-->
+<section ng-show="showTwitterFollowers">
+
+    <div class="container">
+        <h2>Twitter Followers!</h2>
+        <div class="row" ng-repeat="follower in followerList.users">
+            <div class="col-md-1">
+                <img ng-src="{{follower.profile_image_url}}" class="search-result-image" />
+            </div>
+            <div class="col-md-11">
+                <div>
+                    <button class="user-name-link" ng-click="showUserProfile(follower)"><b>{{follower.name}}</b></button>&nbsp;&nbsp;@{{follower.screen_name}}
+                    &nbsp;
+                    <button class="btn btn-primary pull-right" ng-click="followUser(follower)">Monitor</button>
+                </div>
+                <div>
+                    {{follower.description}}
+                </div>
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    </div>
+</section>
+
+<!-- We don't have to show people being monitored by other users
+<section ng-show="showMonitoredPeople">
+    <div class="container">
+        <h2>People being Monitored</h2>
+        <div class="row" ng-repeat="person in monitoredPeople">
+            <div class="col-md-1">
+                <img ng-src="{{person.profile_image_url}}" />
+            </div>
+            <div class="col-md-11">
+                <div>
+                    <button class="user-name-link" ng-click="showUserProfile(person)"><b>{{person.name}}</b></button>&nbsp;&nbsp;@{{person.screen_name}}
+                    &nbsp;
+                    <button class="btn btn-danger pull-right" ng-click="unfollowUser(person)">UnMonitor</button>
+                </div>
+                <div>
+                    {{person.description}}
+                </div>
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    </div>
+</section>
+    -->

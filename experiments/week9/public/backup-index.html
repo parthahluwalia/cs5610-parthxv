@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    
+    <title>Sentiments Network</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- skin -->
+    <link rel="stylesheet" href="skin/default.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    
+    <!--My Scripts -->
+    <script src="js/phrase-sentiment.js"></script>
+    <script src="js/people-search.js"></script>
+    <script src="js/service.js"></script>
+</head>
+
+<body ng-app="SentimentAnalysisApp">
+    <section id="header" class="appear"></section>
+    <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="fa fa-bars color-white"></span>
+                </button>
+                <h1>
+                    <a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">
+                        Sentiments Network
+                    </a>
+                </h1>
+            </div>
+            <div class="navbar-collapse collapse" ng-controller="UserCtrl">
+                <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+                    <!--<li><a href="#section-about">About</a></li>-->
+                    <li><a href="#parallax1">Phrase Module</a></li>
+                    <li><a href="#section-contact">Contact</a></li>
+                    <!--
+                    <li class="mar-left30 mar-top5">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Username" ng-model="user.username" />
+                    </li>
+                    <li class="mar-left10 mar-top5">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="user.password" />
+                    </li>
+                    <li class="mar-left10 mar-top5">
+                        <button class="btn btn-theme pull-left" ng-click="login(user)"><b>Sign In</b></button>
+                    </li>
+                
+                     Search people button removed
+                    <li>
+                       <input type="text" class="form-control" placeholder="Search People" ng-model="searchTerm" />
+                    </li>
+                    <li>
+                        <button class="btn" ng-click="search(searchTerm)">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </li>
+                    -->
+
+                    <li>
+                        <a href="#people">People</a>
+                    </li>
+
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <section class="featured">
+        <div class="container">
+            <div class="row mar-bot40">
+                <div class="col-md-6 col-md-offset-3">
+
+                    <div class="align-center">
+                        <i class="fa fa-flask fa-5x mar-bot20"></i>
+                        <h2 class="slogan">Sentiments Social Network</h2>
+                        <p>
+                            Sentiment Analysis Social Network uses text analysis and computational linguistics to identify
+                            and extract subjective information in source materials and helps you analyze the
+                            sentiments of your subject - it can be your followers, people you are following, locations and/or phrases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- /about -->
+    <!-- parallax1 -->
+    <!-- spacer section:stats -->
+    <section id="parallax1" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+        <div class="container" ng-controller="PhraseSentimentCtrl">
+            <div class="align-left pad-top40 pad-bot40">
+                <blockquote class="bigquote color-white">Subject Sentiment Module</blockquote>
+                <div class="input-group col-lg-6 phraseSentiment">
+                    <input class="form-control" type="text" placeholder="Enter a subject, you want to analyze tweets about" ng-model="searchText" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-theme" type="button" ng-click="analyzeTweets(searchText)">Analyze Sentiment</button>
+                    </span>
+                </div>
+            </div>
+
+            <h4 class="color-white" ng-show="comparative">The subject's sentiment is <b>{{phraseSentiment}},</b> at the moment.</h4>
+
+        </div>
+    </section>
+
+    <div class="container">
+        <button class="btn btn-primary">Watch Analysis</button> -- Yet to Implement
+
+    </div>
+
+
+    <section id="people" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+        <div class="container" ng-controller="PeopleCtrl">
+            <div class="align-left pad-top40 pad-bot40">
+                <blockquote class="bigquote">Search People in the Network</blockquote>
+                <input type="text" class="form-control" ng-model="userTerm" placeholder="Search People" />
+                <button class="btn btn-cta" ng-click="searchPeople(userTerm)">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+
+            <br />
+
+            <div ng-show="searchedUsers" class="show-users">
+                <div class="row" ng-repeat="user in searchedUsers">
+                    <div class="col-lg-1">
+                        <img ng-src="{{user.profile_image_url}}" /> 
+                    </div>
+                    <div class="col-lg-11">
+                        <div>
+                            <button class="user-name-link" ng-click="showUserDetails = !showUserDetails; showUserTimeline(user)"><b>{{user.name}}</b></button>&nbsp;&nbsp;@{{user.screen_name}} 
+                        </div>
+
+                        <div>
+                            {{user.description}}
+                        </div>
+                        
+                        <div ng-show="showUserDetails">
+                            <div class="row">
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-sm-2">
+                                    <div>Tweets</div>
+                                    <div>{{userTimeline.userDetails.statuses_count}}</div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div>Followers</div>
+                                    <div>{{userTimeline.userDetails.followers_count}}</div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div>Following</div>
+                                    <div>{{userTimeline.userDetails.friends_count}}</div>
+                                </div>
+                            </div>
+                            <div class="row" ng-repeat="status in userTimeline.statuses">
+                                {{status.text}}
+                                <div>&nbsp;</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <br />
+    <br />
+
+
+    <!-- contact -->
+    <section id="section-contact" class="section appear clearfix">
+        <div class="container">
+
+            <div class="row mar-bot40">
+                <div class="col-md-offset-3 col-md-6">
+                    <div class="section-header">
+                        <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
+                        <p>If you have any suggestions on how we can improve our site to serve you better, please write to us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="cform" id="contact-form">
+                        <div id="sendmessage">
+                            Your message has been sent. Thank you!
+                        </div>
+                        <form action="contact/contact.php" method="post" role="form" class="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="maxlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+                                <div class="validation"></div>
+                            </div>
+
+                            <button type="submit" class="btn btn-theme pull-left">SEND MESSAGE</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- map -->
+    <section id="section-map" class="clearfix">
+        <div id="map"></div>
+    </section>
+
+
+    <section class="container">
+        <div class="jumbotron" ng-controller="SignInCtrl">
+            <!--
+            <input type="text" placeholder="Twitter Username" class="form-control" />
+            <input type="text" placeholder="Password" class="form-control" />
+        -->
+            <a href="/auth/twitter" class="btn btn-primary">Sign In with Twitter</a>
+        </div>
+
+    </section>
+    
+
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/googleMap_PA.js"></script>
+
+</body>
+</html>

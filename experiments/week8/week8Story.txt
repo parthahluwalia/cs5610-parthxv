@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/week8/week8Story.txt What is next?
+experiment1.html Posting Tweets from our App
+experiment2.html Designing the Welcome Page of our Single Page App
+experiment3.html Analyze and assign behavior to the phrases analyzed
+experiment4.html Adding Contact US and Maps in the App
+experiment5.html users/search API of Twitter

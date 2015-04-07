@@ -1,0 +1,57 @@
+﻿
+<section id="people" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+    <div class="container" ng-controller="PeopleCtrl">
+        <div class="align-left pad-top40 pad-bot40">
+            <blockquote class="bigquote">Search People in the Network</blockquote>
+            <input type="text" class="form-control" ng-model="userTerm" placeholder="Search People" />
+            <button class="btn btn-cta" ng-click="searchPeople(userTerm)">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+
+        <br />
+
+        <div ng-show="searchedUsers" class="show-users">
+            <div class="row" ng-repeat="user in searchedUsers">
+                <div class="col-lg-1">
+                    <img ng-src="{{user.profile_image_url}}" />
+                </div>
+                <div class="col-lg-11">
+                    <div>
+                        <!-- <button class="user-name-link" ng-click="showUserDetails = !showUserDetails; showUserTimeline(user)"><b>{{user.name}}</b></button>&nbsp;&nbsp;@{{user.screen_name}} -->
+                        <button class="user-name-link" ng-click="showUserProfile(user)"><b>{{user.name}}</b></button>&nbsp;&nbsp;@{{user.screen_name}}
+                    </div>
+
+                    <div>
+                        {{user.description}}
+                    </div>
+                    <!--
+                    <div ng-show="showUserDetails">
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-sm-2">
+                                <div>Tweets</div>
+                                <div>{{userTimeline.userDetails.statuses_count}}</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div>Followers</div>
+                                <div>{{userTimeline.userDetails.followers_count}}</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div>Following</div>
+                                <div>{{userTimeline.userDetails.friends_count}}</div>
+                            </div>
+                        </div>
+                        <div class="row" ng-repeat="status in userTimeline.statuses">
+                            {{status.text}}
+                            <div>&nbsp;</div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <div>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</section>
