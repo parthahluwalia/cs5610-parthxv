@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Navigating to a User's Profile</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Navigating to a User's Profile</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+          When a user runs a search for people or views his twitter followers/friends, he might want to navigate to a user's profile. 
+            They can do so by clicking on a user's name in the respective results. As a user clicks on another user's profile, the respective user's data will 
+            be fetched from Twitter and rendered according to the app to be displayed to the user.
+        </p>
+        <p>
+            The data that will be rendered includes - Tweets, Twitter Friends and Twitter Followers.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>var imgURL = user.profile_image_url;
+        if (imgURL.substring(imgURL.length - 4) === "jpeg") {
+            var profile_img_400x400 = imgURL.substring(0, imgURL.length - 12) + "_400x400.jpeg";
+        } else {
+            var profile_img_400x400 = imgURL.substring(0, imgURL.length - 11) + "_400x400.jpg";
+        }
+        $http.get("/statuses-user_timeline/" + user.screen_name)
+         .success(function (statuses) {
+             //console.log(statuses);
+             var userPageDetails = {
+                 userDetails: user,
+                 statuses: statuses,
+                 profile_img: profile_img_400x400
+             };
+             $rootScope.selectedUserTimeline = userPageDetails;
+             console.log(userPageDetails);
+             $location.path('/profile/' + user.screen_name);
+         });</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/views/account.html">View User Account Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/js/user-ctrl.js">View User Controller</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Monitoring Users</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Monitoring Users and their Sentiments</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            The crux of this App is to analyze sentiments! In order to integrate it with a Social Network, a user might want 
+            to monitor users in their network and see how they are feeling. In order to do so, a functionality to "Monitor" and 
+            "UnMonitor" has been included in the app.
+        </p>
+        <p>
+            Implementing this requires another schema in the database that includes the following fields - followee, follower, start, end. 
+            A followee is the person who is being monitored, follower is the person who is monitoring the respective person, 
+            start indicates the start date of monitoring. The absence of "end" field in a document implies that a person is still 
+            monitoring the respective person. The presence of end field with the coressponding end date indicates the the date when 
+            the follower stopped monitoring the respective followee.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>FolloweeFollowerModel.findOne({
+        $and: [
+            { followee: followee },
+            { follower: follower },
+            { end: { $exists: false } }
+        ]
+    }, function (err, followeeFollowerRecord) {
+        if (err) {
+            console.log(err);
+        } else if (!err && followeeFollowerRecord != null) {
+            console.log("The follower is already following the respective followee. Below are the document details:");
+            console.log(followeeFollowerRecord);
+        } else {
+            //Create a new follower-followee record in the database to for monitoring!
+            var followeeFollower = new FolloweeFollowerModel({
+                followee: followee,
+                follower: follower,
+                start: new Date(),
+            });
+            followeeFollower.save(function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("Saving the followee: " + followee);
+                }
+            });
+        }  
+    });</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/views/account.html">View User Account Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/js/user-ctrl.js">View User Controller</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>
