@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>UnMonitoring Users</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>UnMonitoring Users and their Sentiments</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            In order to implement "UnMonitor" functionality, the followee-follower record in the database will be modified in a way to include 
+            the "end" field to include the end date of monitoring, and the the response will be rendered accordinglya and displayed to the user.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>FolloweeFollowerModel.findOne({
+        $and: [
+            { followee: followee },
+            { follower: follower },
+            { end: { $exists: false } }
+        ]
+    }, function (err, followeeFollowerRecord) {
+        if (err) {
+            console.log(err);
+        } else if (!err && followeeFollowerRecord != null) {
+            console.log("Unfollowing the below document details, found in the database:\n");
+            console.log(followeeFollowerRecord);
+            followeeFollowerRecord.update({ $set: { end: endDate } }, function (err, doc) {
+                FolloweeFollowerModel.find({
+                    $and: [
+                        { follower: follower },
+                        { end: { $exists: false } }
+                    ]
+                }, function (err, followees) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        var friendsToLookup = [];
+                        for (var i in followees) {
+                            friendsToLookup.push(followees[i].followee);
+                        }
+                        var friendsLookupStr = friendsToLookup.join(',');
+                        console.log("Looking up friends: " + friendsLookupStr);
+                        //Get details from twitter...
+                        twitterClient.get('users/lookup', { user_id: friendsLookupStr }, function (error, statuses, response) {
+                            res.json(statuses);
+                        });
+                    }
+                });
+            });
+        } else {
+            console.log("The respective record does not exist in the database.")
+        }
+    });</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/views/account.html">View User Account Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/js/user-ctrl.js">View User Controller</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>

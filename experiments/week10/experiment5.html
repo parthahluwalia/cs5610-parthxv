@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Monitored Users News Feed</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Monitored User Sentiments News Feed</h1>
+    </div>
+
+    <div class="container">
+        <h3><a href="http://project-cs5610parthxv.rhcloud.com/">RHcloud Link to the Experiment</a></h3>
+
+        <hr />
+        <h2>About the experiment</h2>
+        <hr />
+        <p>
+            The users that are being monitored by a particular user with their curent sentiments and respective analysis will be shown to a user as 
+            he logs into his profile in the app through twitter. The sentiment adjective will be shown to the user as a news feed and the analysis could be 
+            seen by clicking on "Watch Analysis" button.
+        </p>
+        <p>
+            This has been implemented by passing the last tweet of the current monitored users for the respective logged in user to our sentiment module and rendering 
+            the results onto this page.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>FolloweeFollowerModel.find({
+        $and: [
+            { follower: loggedInUserId },
+            { end: { $exists: false } }
+        ]
+    }, function (err, followees) {
+        if (err) {
+            console.log(err);
+        } else {
+            var friendsToLookup = [];
+            for (var i in followees) {
+                friendsToLookup.push(followees[i].followee);
+            }
+            var friendsLookupStr = friendsToLookup.join(',');
+            console.log("Looking up friends: " + friendsLookupStr);
+            //Make request to twitter
+            twitterClient.get('users/lookup', { user_id: friendsLookupStr }, function (error, monitoredUsers, response) {
+                //Now we have the details of users being monitored in monitoredUsers
+                //Iterate through them and their most recent status and calculate their sentiments.
+                var monitoredUsersSentiments = [];
+                for (var i in monitoredUsers) {
+                    var calculatedSentiment = sentiment(monitoredUsers[i].status.text);
+                    var comparative = calculatedSentiment.comparative;
+                    var sentimentAdj = null;
+                    if (0 < comparative && comparative < 0.15) {
+                        sentimentAdj = "fine"
+                    } else if (0.15 <= comparative && comparative < 0.3) {
+                        sentimentAdj = "incredible"
+                    } else if (0.3 < comparative && comparative < 0.6) {
+                        sentimentAdj = "fantabulous"
+                    } else if (comparative >= 0.6) {
+                        sentimentAdj = "spectacularly out of the world"
+                    } else if (comparative === 0) {
+                        sentimentAdj = "okay"
+                    } else if (-0.1 < comparative && comparative < 0) {
+                        sentimentAdj = "not that good"
+                    } else if (-0.25 < comparative && comparative <= -0.1) {
+                        sentimentAdj = "lousy"
+                    } else if (-0.55 < comparative && comparative <= 0.25) {
+                        sentimentAdj = "awful"
+                    } else if (comparative <= -0.55) {
+                        sentimentAdj = "awfully bad"
+                    }
+                    monitoredUsersSentiments.push({
+                        monitoredUser: monitoredUsers[i],
+                        sentiment: calculatedSentiment,
+                        sentimentAdj: sentimentAdj
+                    });
+                }
+                res.json(monitoredUsersSentiments);
+            });
+        }
+    });</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/views/account.html">View User Account Source</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/public/js/user-ctrl.js">View User Controller</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/server.js">View server.js</a></li>
+            <li><a href="https://github.com/parthxv/cs5610-parthxv/blob/master/experiments/week10/package.json">View package.json</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li><a href="https://dev.twitter.com/rest/public">Twitter Developers REST APIs</a></li>
+        </ul>
+        <hr />
+    </div>
+
+</body>
+</html>
