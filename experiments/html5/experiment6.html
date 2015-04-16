@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Designing the Home Page</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Designing the Home Page - jQuery FlexSlider</h1>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>
+                <a href="http://net4.ccs.neu.edu/home/parthxv/" title="Go to Home Page">Link to the Experiment Demo</a>
+            </h3>
+        </div>
+
+        <h2>Description</h2>
+        <hr />
+        <p>
+            This experiment demonstrates how to design a responsive home page using CSS and add some effects using JavaScript.
+            In the first part of the experiment I wrote about how I used CSS to style and design the page. In this part let's I'll give a
+            brief note on JavaScript libraries that have been used to design the page.
+        </p>
+        <p>
+            The page has a "scroll down" icon, that when clicked, takes a user to the imporatnt links down below the page scrolling smoothly over the
+            contents of the page. This has been possible using a robust library of JavaScript - jQuery.flexslider. This requires jQuery to be first
+            installed in the page, for it to take its desired effect. We just have to specify the "smoothscroll" class for the respective link containing
+            the anchor tag to the part of the page, and the flexslider does its part.
+        </p>
+
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>&lt;p class="scrolldown">
+    &lt;a class="smoothscroll" href="#portfolio">&lt;i class="icon-down-circle"></i></a>
+&lt;/p></pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/Default.aspx">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/css/layout.css">View CSS Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/js/jquery.flexslider">View FlexSlider Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Webkit_Extensions">Webkit Extensions</a>
+            </li>
+            <li>
+                <a href="http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">CSS Transition Timing Function Property</a>
+            </li>
+            <li>
+                <a href="http://easings.net/">Easing functions cheat sheet</a>
+            </li>
+            <li>
+                <a href="http://greensock.com/roughease">Green Sock RoughEase</a>
+            </li>
+        </ul>
+        <hr />
+
+    </div>
+</body>
+</html>

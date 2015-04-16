@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Designing the Home Page</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css" />
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Designing the Home Page</h1>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>
+                <a href="http://net4.ccs.neu.edu/home/parthxv/" title="Go to Home Page">Link to the Experiment Demo</a>
+            </h3>
+        </div>
+
+        <h2>Description</h2>
+        <hr />
+        <p>
+            This experiment demonstrates how to design a responsive home page using CSS and add some effects using JavaScript. 
+            To start with let's discuss the CSS part first. 
+        </p>
+        <p>
+            The display picture has been transormed into a circular one, using the border-radius property, setting it to 100%. 
+            The contents have been aligned in the center of the page (vertically) by setting the width of the main div containing 
+            all the contents to 85% of the screen and adding a uniform padding to both sides. 
+            Dislpaying the links to Experiments, Project, Documentation and GitHub uses overlay effects and CSS animations to wrap various 
+            contents into one element. For each of these links, their respective title, icon and a short description has been wrapped as a single 
+            item by adjusting their relative and absolute positions corresponding to the link image. These are visible only when a user 
+            hovers over a respctive link. Also a transparent darkish background image has been associated with each of these link images which appears 
+            over the image when a user hovers over the respective link. In order to give the appearance of the wrapped items an animation-easing effect, 
+            transition property of CSS has been used with opacity and an ease-in-out time of 0.3s. This gives the transition a smooth delay effect making it 
+            more beautiful when a user hovers over it. For the footer icons containing link to social profiles, again font-awesome icons have been used 
+            for particualr social networks, and just the background color is changed to "white" as a user hovers over an icon.
+        </p>
+        <p>
+            In order to make the web page responsive, @media queries have been used to adjust various element of the page according to the screen width.
+        </p>
+
+        <h2>Code Snippet</h2>
+        <hr />
+        <p>
+            <pre>/* scrolldown link */
+header .scrolldown a {
+   position: absolute;
+   bottom: 30px;
+   left: 50%;
+   margin-left: -29px;
+   color: #fff;
+   display: block;
+   height: 42px;
+   width: 42px;
+   font-size: 42px;
+   line-height: 42px;
+   color: #fff;
+   border-radius: 100%;
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
+}
+header .scrolldown a:hover { color: #11ABB0; }</pre>
+        </p>
+
+        <h2>Source Code</h2>
+        <hr />
+        <ul>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/Default.aspx">View HTML Source</a></li>
+            <li><a class="link" href="../../../fileview/Default.aspx?~/css/layout.css">View CSS Source</a></li>
+        </ul>
+
+        <h2>References</h2>
+        <hr />
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Webkit_Extensions">Webkit Extensions</a>
+            </li>
+            <li>
+                <a href="http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">CSS Transition Timing Function Property</a>
+            </li>
+            <li>
+                <a href="http://easings.net/">Easing functions cheat sheet</a>
+            </li>
+            <li>
+                <a href="http://greensock.com/roughease">Green Sock RoughEase</a>
+            </li>
+        </ul>
+        <hr />
+
+    </div>
+</body>
+</html>
