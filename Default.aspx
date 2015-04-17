@@ -100,6 +100,7 @@
     -->
 
     <header id="home">
+
         <nav id="nav-wrap">
 
             <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
@@ -107,7 +108,6 @@
 
             <ul id="nav" class="nav">
                 <li class="current"><a class="smoothscroll" href="#portfolio">Works</a></li>
-
                 <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
                 <li><a href="statistics/" target="_blank">Statistics</a></li>
                 <li><a href="source/" target="_blank">Source</a></li>
@@ -118,11 +118,6 @@
                 <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
                 <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
                 <li><a href="blog/" target="_blank">Blog</a></li>
-                <!--
-                <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-                <li><a class="smoothscroll" href="#about">About</a></li>
-                <li><a class="smoothscroll" href="#resume">Resume</a></li>               
-                <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>-->
             </ul> <!-- end #nav -->
 
         </nav> <!-- end #nav-wrap -->

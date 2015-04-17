@@ -49,7 +49,7 @@
 
    /* About Section
    ------------------------------------------------------------------- */
-   #about .profile-pic {
+   .profile-pic {
       width: 114px;
       height: 114px;
       margin-left: 12px;
@@ -187,7 +187,8 @@
 
    /* Header Styles
    -------------------------------------------------------------------- */
-   header .banner {
+   /*Testing the new one*/
+   /*header .banner {
       padding-bottom: 12px;
       padding-top: 6px;
    }
@@ -198,6 +199,20 @@
    }
    header .banner-text hr {
       width: 80%;
+      margin: 18px auto;
+   }*/
+
+   header .banner {
+      padding-bottom: 8px;
+      padding-top: 6px;
+   }
+   header .banner-text h1 { font: 58px 'opensans-bold', sans-serif; }
+   header .banner-text h3 {
+      font: 13px 'librebaskerville-regular', serif;
+      width: 85%;
+   }
+   header .banner-text hr {
+      width: 90%;
       margin: 18px auto;
    }
 
@@ -215,13 +230,12 @@
 
    /* About Section
    -------------------------------------------------------------------- */
-   #about .profile-pic { display: none; }
-   #about .download .button {
-      width: 100%;
-      text-align: center;
-      padding: 15px 20px;
+   /*.profile-pic { display: none; }*/
+       .profile-pic {
+      width: 90px;
+      height: 90px;
+      margin-left: 12px;
    }
-   #about .main-col { padding-right: 30px; }
 
 
    /* Resume Section

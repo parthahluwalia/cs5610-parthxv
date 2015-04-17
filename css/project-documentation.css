@@ -1,0 +1,24 @@
+﻿.description {
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+.ssn-bold {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.abstract-para {
+    line-height: 170%;
+}
+
+.catchy-link {
+    font-weight: 600;
+    color: #09bd8b;
+}
+
+.catchy-link:hover {
+    font-weight: 600;
+    color: #0ab06d;
+    text-decoration: none;
+}
