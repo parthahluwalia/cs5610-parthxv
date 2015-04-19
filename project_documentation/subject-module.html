@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Subject Module</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+
+    <!--jQuery-->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Subject Sentiments Module</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 description">
+            <p class="abstract-para">
+                If a user wishes to see the sentiments of a subject, the subject could be entered as a text input, and "Analyze Sentiments" 
+                button could be clicked. Last 15 tweets (configurable in the app) posted about the subject are gathered, and each of the 
+                tweet is fed to our sentiments module. The sentiment module assigns a polarity to each tweet, extracting the subjective information 
+                through computational linguistics and text analysis. The working of our Sentiment Analysis module has been described <a href="sentiment-analysis.html" class="catchy-link">here</a>. 
+                Suppose a user wants to know how <i>Paris</i> is doing right now.
+                <div class="row">
+                    <img src="../images/project-documentation/subject1.jpg" class="col-md-12" />
+                </div>
+            </p>
+            <p class="abstract-para">
+                The analysis will be displayed to the user as:
+                <div class="row">
+                    <img src="../images/project-documentation/subject2.jpg" class="col-md-12" />
+                </div>
+            </p>
+            <p class="abstract-para">
+                for (upto) last 15 tweets analyzed, and a mean comparative score generated as:
+                <div class="row">
+                    <img src="../images/project-documentation/subject3.jpg" class="col-md-9" />
+                </div>
+            </p>
+            <br />
+
+        </div>
+    </div>
+
+</body>
+</html>

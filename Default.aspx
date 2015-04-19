@@ -160,7 +160,7 @@
                     <!--Experiments-->
                     <div class="columns portfolio-item">
                         <div class="item-wrap">
-                            <a href="story/index.htm?../experiments/story.txt">
+                            <a href="story/index.htm?../experiments/story.txt" target="_blank">
                                 <img alt="" src="images/portfolio/js_exp.png">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
@@ -197,7 +197,7 @@
                     <div class="columns portfolio-item">
                         <div class="item-wrap">
 
-                            <a href="#">
+                            <a href="story/index.htm?../project_documentation/story.txt" target="_blank">
                                 <img alt="" src="images/portfolio/origami.jpg">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
@@ -214,7 +214,7 @@
                     <div class="columns portfolio-item">
                         <div class="item-wrap">
 
-                            <a href="https://github.com/parthxv/cs5610-parthxv">
+                            <a href="https://github.com/parthxv/cs5610-parthxv" target="_blank">
                                 <img alt="" src="images/portfolio/github.jpg">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">

@@ -1,0 +1,11 @@
+﻿../story/whatisnext.htm?../experiments/story.txt What is next?
+../story/index.htm?../experiments/html5/htmlStory.txt Week-1: HTML and CSS Experiments
+../story/index.htm?../experiments/week2/week2Story.txt Week-2: Responsive Design and Bootstrap
+../story/index.htm?../experiments/week3/week3Story.txt Week-3: JavaScript and jQuery Experiments
+../story/index.htm?../experiments/week4/week4Story.txt Week-4: AJAX and Angular JS Experiments
+../story/index.htm?../experiments/week5/week5Story.txt Week-5: Angular JS Routing and Services
+../story/index.htm?../experiments/week6/week6Story.txt Week-6: Node.js Experiments
+../story/index.htm?../experiments/week7/week7Story.txt Week-7: Sentiment Analysis App using MEAN stack
+../story/index.htm?../experiments/week8/week8Story.txt Week-8: Sentiment Analysis Social Network - Subject Module
+../story/index.htm?../experiments/week9/week9Story.txt Week-9: Sentiments Social Network - PassportJS & Twitter REST APIs
+../story/index.htm?../experiments/week10/week10Story.txt Week-10: Sentiments Social Network - Monitor Users' Profiles and News Feed

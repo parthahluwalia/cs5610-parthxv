@@ -1,0 +1,14 @@
+﻿../story/whatisnext.htm?../project_documentation/story.txt PROJECT DOCUMENTATION
+abstract.html ABSTRACT
+introduction.html INTRODUCTION
+technology-stack.html TECHNOLOGY STACK
+sentiment-analysis.html SENTIMENT ANALYSIS
+flow-chart.html FLOW OF THE APP
+home-page.html HOME PAGE
+twitter-sign-in.html TWITTER SIGN IN
+subject-module.html SUBJECT MODULE
+people.html PEOPLE
+user-profile.html USER PROFILE
+user-account.html CURRENT USER ACCOUNT
+bookmark.html BOOKMARKING
+posting-tweets.html POSTING TWEETS

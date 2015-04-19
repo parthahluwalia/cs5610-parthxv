@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Profile</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+
+    <!--jQuery-->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">User Profile</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 description">
+            <p class="abstract-para">
+                A user's profile (not of the current logged in user) shows the recent timeline of a user. At the 
+                top of their page a section is dedicated to show thier description and links / buttons to the 
+                useful information about them.
+            </p>
+            <p class="abstract-para">
+                This section includes user's name, twitter screen name and description. This also contains links to 
+                show their tweets, Twitter friends and Twitter followers in the view below, and a button (if a user is logged into his account) 
+                to <b>Monitor / Unmonitor</b> a user.
+                <div class="row">
+                    <img src="../images/project-documentation/userP1.jpg" class="col-md-12" />
+                </div>
+            </p>
+            <p class="abstract-para">
+                The section below, the timeline of the user is set to show the most recent <b>Analysis</b> of how the 
+                person is feeling at the moment (which is can be viewd in detail by clicking the "Watch Analysis" button) and the recent 
+                tweets posted by the person, by default. 
+                <br />
+                The analysis can be viewed as:
+                <div class="row">
+                    <img src="../images/project-documentation/userP2.jpg" class="col-md-12" />
+                </div>
+                <br />
+                And, the tweets are shown as:
+                <div class="row">
+                    <img src="../images/project-documentation/userP3.jpg" class="col-md-9" />
+                </div>
+            </p>
+            <br />
+            <p class="abstract-para">
+                You can also nabvigate to see the Twitter Friends and Twitter Followers of a user by clicking on the respective links 
+                on the header section of the page and they will be displayed in the below view section, ensuring the ease of 
+                navigation for any user.
+            </p>
+            <p class="abstract-para">
+                Twitter Friends:
+                <div class="row">
+                    <img src="../images/project-documentation/userP4.jpg" class="col-md-9" />
+                </div>
+            </p>
+            <p class="abstract-para">
+                Twitter Followers:
+                <div class="row">
+                    <img src="../images/project-documentation/userP5.jpg" class="col-md-9" />
+                </div>
+            </p>
+            <br />
+            <p class="abstract-para">
+                The data has been gathered from a bunch of methods in REST API of Twitter.
+            </p>
+
+            <h3>GET users/show</h3>
+            <hr />
+            <p class="abstract-para">
+                Returns a variety of information about the user specified by the required user_id or screen_name parameter. The author’s most recent Tweet will be returned inline when possible.
+            </p>
+            <p class="abstract-para">
+                Click <a href="https://dev.twitter.com/rest/reference/get/users/show" class="catchy-link">here</a> for details of this method.
+            </p>
+
+            <h3>GET statuses/user_timeline</h3>
+            <hr />
+            <p class="abstract-para">
+                Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters.
+            </p>
+            <p class="abstract-para">
+                Click <a href="https://dev.twitter.com/rest/reference/get/statuses/user_timeline" class="catchy-link">here</a> for details of this method.
+            </p>
+
+            <h3>GET friends/list</h3>
+            <hr />
+            <p class="abstract-para">
+                Returns a cursored collection of user objects for every user the specified user is following (otherwise known as their “friends”).
+            </p>
+            <p class="abstract-para">
+                Click <a href="https://dev.twitter.com/rest/reference/get/friends/list" class="catchy-link">here</a> for details of this method.
+            </p>
+
+            <h3>GET followers/list</h3>
+            <hr />
+            <p class="abstract-para">
+                Returns a cursored collection of user objects for users following the specified user.
+            </p>
+            <p class="abstract-para">
+                Click <a href="https://dev.twitter.com/rest/reference/get/followers/list" class="catchy-link">here</a> for details of this method.
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Posting Tweets</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+
+    <!--jQuery-->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Posting a Tweet from the Network</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 description">
+            <p class="abstract-para">
+                The functionality of posting a tweet from the app has been added in order to suggest activities or otherwise. 
+                A user while monitoring another subject might want to tweet about them or suggest them activities. This could be 
+                done without engaging the user to go into his twitter account and posting a tweet directly from the app on their 
+                twitter timeline. 
+                <div class="row">
+                    <img src="../images/project-documentation/tweet1.jpg" class="col-md-8" />
+                </div>
+            </p>
+            <p class="abstract-para">
+                Let's write a tweet for <i>Daenerys Targaryen</i>.
+                <div class="row">
+                    <img src="../images/project-documentation/tweet2.jpg" class="col-md-9" />
+                </div>
+            </p>
+            <p class="abstract-para">
+                The tweet can be viewed on the user's Twitter timeline.
+                <div class="row">
+                    <img src="../images/project-documentation/tweet3.jpg" />
+                </div>
+                <br />
+                <div class="row">
+                    <img src="../images/project-documentation/tweet4.jpg" />
+                </div>
+            </p>
+
+            <h3>POST statuses/update</h3>
+            <hr />
+            <p class="abstract-para">
+                Updates the authenticating user’s current status, also known as tweeting. 
+            </p>
+            <p class="abstract-para">
+                For each update attempt, the update text is compared with the authenticating user’s recent tweets. Any attempt that would result in duplication will be blocked, resulting in a 403 error. Therefore, a user cannot submit the same status twice in a row.
+            </p>
+            <p class="abstract-para">
+                While not rate limited by the API a user is limited in the number of tweets they can create at a time. If the number of updates posted by the user reaches the current allowed limit this method will return an HTTP 403 error.
+            </p>
+            <p class="abstract-para">
+                Click <a href="https://dev.twitter.com/rest/reference/post/statuses/update" class="catchy-link">here</a> for details of this method.
+            </p>
+            
+
+        </div>
+    </div>
+
+</body>
+</html>

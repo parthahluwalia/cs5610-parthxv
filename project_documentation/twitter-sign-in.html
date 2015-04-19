@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Twitter Sign In</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../css/project-documentation.css" />
+
+    <!--jQuery-->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="text-center">Twitter Sign In</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 description">
+            <h3>We use <b>PassportJS strategy for Twitter.</b></h3>
+
+            <p class="abstract-para">
+                The Twitter strategy allows users to sign in to a web application using their Twitter account. Internally, Twitter authentication works using OAuth 1.0a.
+            </p>
+            <p class="abstract-para">
+                The support for Twitter has been implemented by <a href="https://github.com/jaredhanson/passport-twitter" class="catchy-link">passport-twitter</a> module.
+            </p>
+            <h3>Configuration</h3>
+            <hr />
+            <p class="abstract-para">
+                In order to use Twitter authentication, you must first create an application at <a href="https://dev.twitter.com/" class="catchy-link">Twitter Developers</a>. When created, an application is assigned a consumer key and consumer secret. Your application must also implement a callback URL, to which Twitter will redirect users after they have approved access for your application.
+            </p>
+
+            <h3>Routes</h3>
+            <hr />
+            <p class="abstract-para">
+                Two routes are required for Twitter authentication. The first route initiates an OAuth transaction and redirects the user to Twitter. The second route is the URL to which Twitter will redirect the user after they have signed in.
+            </p>
+            <pre>// Redirect the user to Twitter for authentication.  When complete, Twitter
+// will redirect the user back to the application at
+//   /auth/twitter/callback
+app.get('/auth/twitter', passport.authenticate('twitter'));
+// Twitter will redirect the user to this URL after approval.  Finish the
+// authentication process by attempting to obtain an access token.  If
+// access was granted, the user will be logged in.  Otherwise,
+// authentication has failed.
+app.get('/auth/twitter/callback', 
+  passport.authenticate('twitter', { successRedirect: '/',
+                                     failureRedirect: '/login' }));</pre>
+            
+            <p class="abstract-para">
+                The app, after verifying the user's sign in on their Twitter and the app's consumer key and secret, finds the 
+                respective user in the application's database. If the respective user is not found their corresponding record 
+                is created in the database with their required details.
+            </p>
+
+        </div>
+    </div>
+    
+</body>
+</html>
