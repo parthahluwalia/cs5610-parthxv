@@ -1,0 +1,42 @@
+﻿
+<section id="people" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+    <div class="container" ng-controller="UserCtrl">
+        <div class="align-left pad-top40 pad-bot40">
+            <div class="col-md-offset-2">
+                <h1 class="bigquote"><i class="fa fa-users"></i>&nbsp;&nbsp;Search People in the Network</h1>
+            </div>
+
+            <div class="col-md-6 col-md-offset-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="userTerm" placeholder="Search People" />
+                    <span class="input-group-btn">
+                        <button title="Search on Twitter" class="btn btn-cta" ng-click="searchPeople(userTerm)">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>     
+            
+        </div>
+
+        <br />
+
+        <div ng-show="searchedUsers" class="show-users">
+            <div class="row" ng-repeat="user in searchedUsers">
+                <div class="col-md-1 col-md-offset-2">
+                    <img ng-src="{{user.profile_image_url}}" class="search-result-image" />
+                </div>
+                <div class="col-md-7">
+                    <div>
+                        <button title="{{user.name}}" class="user-name-link" ng-click="showUserProfile(user)"><b>{{user.name}}</b></button>&nbsp;&nbsp;@{{user.screen_name}}
+                    </div>
+
+                    <div>
+                        {{user.description}}
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

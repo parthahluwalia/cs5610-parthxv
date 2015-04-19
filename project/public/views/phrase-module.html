@@ -1,0 +1,61 @@
+﻿<!-- parallax1 -->
+<!-- spacer section:stats -->
+<section id="parallax1" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="align-left pad-top40 pad-bot40">
+            <span class="module-heading color-white"><i class="fa fa-2x fa-connectdevelop fa-spin"></i>&nbsp;&nbsp;Subject Sentiment Module</span>
+            <br /><br />
+            <div class="row mar-left10">
+                <div class="input-group col-md-7 phraseSentiment">
+                    <input class="form-control" type="text" placeholder="Enter a subject, you want to analyze tweets about" ng-model="searchText" />
+                    <span class="input-group-btn">
+                        <button title="Analyze Sentiments" class="btn btn-theme" type="button" ng-click="analyzeTweets(searchText)">
+                            <span class="glyphicon glyphicon-flash"></span> <span class="fa fa-paper-plane"></span> <span class="glyphicon glyphicon-flash"></span>
+                        </button>
+                    </span>
+                </div>
+                <div ng-show="showBookmarkIcon">
+                    <button title="Bookmark Subject" class="btn btn-primary" ng-click="bookmarkSubject(searchText)">
+                        <span class="fa fa-2x fa-bookmark"></span>
+                    </button>
+                    <span class="bookmarkMsg" ng-show="showBookmarkMsg">{{bookmarkMsg}}</span>
+                </div>
+            </div>
+                           
+        </div>
+
+        <div class="row" ng-show="showSubjectSentiment">
+            <div class="col-md-8">
+                <span class="phrase-sentiment-text">The subject's sentiment is <span class="text-bold">{{phraseSentiment}}</span>, at the moment</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section ng-show="showSubjectSentiment">
+    <div class="container">
+        <div class="col-md-12">
+            <h2 class="mar-top10">ANALYSIS</h2>
+            <hr />
+        </div>
+        <div class="col-md-8 col-md-offset-2 news-feed-view">
+            <div class="row mar-left15 mar-top10" ng-repeat="tweetSentiment in tweetSentiments">
+                <span class="status-text">{{tweetSentiment.tweet.text}}</span>
+                <br />
+                AFINN Word-list Matches: <span ng-repeat="word in tweetSentiment.sentiment.words">"{{word}}" &nbsp;</span>
+                <br />
+                Positive Words: <span ng-repeat="positiveWord in tweetSentiment.sentiment.positive">"{{positiveWord}}" &nbsp;</span>
+                <br />
+                Negative Words: <span ng-repeat="negativeWord in tweetSentiment.sentiment.negative">"{{negativeWord}}" &nbsp;</span>
+                <br />
+                Calculated Score: {{tweetSentiment.sentiment.score}}
+                <hr />
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 news-feed-view">
+            <h3 class="text-center mar-top15">The comparative score of the analysis is calculated to be <b>{{comparativeScore}}</b></h3>
+        </div>
+    </div>
+</section>

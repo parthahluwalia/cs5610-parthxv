@@ -178,7 +178,7 @@
                     <div class="columns portfolio-item">
                         <div class="item-wrap">
 
-                            <a href="#">
+                            <a href="http://sentiments-cs5610parthxv.rhcloud.com" target="_blank">
                                 <img alt="" src="images/portfolio/Black_desert.jpg">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
@@ -243,10 +243,10 @@
          <div class="twelve columns">
 
             <ul class="social-links">
-               <li><a href="https://www.facebook.com/parth.ahluwalia"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="https://twitter.com/parthahluwalia"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/parthahluwalia"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://instagram.com/parthahluwalia/"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://www.facebook.com/parth.ahluwalia" target="_blank"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://twitter.com/parthahluwalia" target="_blank"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/parthahluwalia" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://instagram.com/parthahluwalia/" target="_blank"><i class="fa fa-instagram"></i></a></li>
             </ul>
 
             <p class="white-text">
