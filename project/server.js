@@ -49,14 +49,14 @@ app.get('/', function (req, res) {
     res.send("Hello from node server");
 });
 
-var TWITTER_CONSUMER_KEY = 'qEgkPlFNdyRIFVC44g2LqLgfk';
-var TWITTER_CONSUMER_SECRET = 'p4MlqqJnnTDg6pTcNOjonjr0nNHZyONwYssDq5wbUEfhTYm3wu';
+var TWITTER_CONSUMER_KEY = '';
+var TWITTER_CONSUMER_SECRET = '';
 
 var config = {
-    consumer_key: 'qEgkPlFNdyRIFVC44g2LqLgfk',
-    consumer_secret: 'p4MlqqJnnTDg6pTcNOjonjr0nNHZyONwYssDq5wbUEfhTYm3wu',
-    access_token_key: '2955363323-H6k63ftQApGw2sklI8NipHpbSUvnm6eKhvP7nzF',
-    access_token_secret: 'x5S0cXd7ZSlIKJhEi6KPQHcmzLEbxz2CW21tVxogKgoyk'
+    consumer_key: '',
+    consumer_secret: '',
+    access_token_key: '',
+    access_token_secret: ''
 };
 
 //Connect to Twitter
